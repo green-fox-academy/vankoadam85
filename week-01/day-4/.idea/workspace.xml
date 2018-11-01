@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b25ac010-b674-400b-b688-a5c0e6b83c97" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../day-3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../day-3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/diagonalMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/diagonalMatrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day-3/src/drawDiamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/../day-3/src/drawDiamond.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,7 +16,7 @@
     <session id="1064154001">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
@@ -230,12 +229,12 @@
       <workItem from="1540972933478" duration="134000" />
       <workItem from="1540995841317" duration="3880000" />
       <workItem from="1541070613536" duration="118000" />
-      <workItem from="1541075373339" duration="1246000" />
+      <workItem from="1541075373339" duration="1250000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24000000" />
+    <option name="totallyTimeSpent" value="24004000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="33" width="1550" height="838" extended-state="6" />
