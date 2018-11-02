@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Arrays;
 public class drawDiamond {
     public static int in() {
         Scanner input = new Scanner(System.in);
@@ -37,8 +36,15 @@ public class drawDiamond {
     }
     public static void main(String[] args) {
         int size = in();
-        for (int k = 0; k < size; k++) {
-            System.out.println(Arrays.toString(diamond(matrix(size), size)[k]));
+        int i  = 0;
+        while (i < size) {
+            for (int j = 0; j < size; j++) {
+                if (j < size - 1) {
+                    System.out.print(diamond(matrix(size), size)[i][j]);
+                } else
+                    System.out.println(diamond(matrix(size), size)[i][j]);
+            }
+            i++;
         }
     }
 }
