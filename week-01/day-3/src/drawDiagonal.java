@@ -11,8 +11,7 @@ public class drawDiagonal {
 
     public static void main(String[] args) {
         int size = size();
-        int i = 0;
-        while (i < size) {
+        for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 if (j == size - 1) {
                     System.out.println("%");
@@ -26,7 +25,6 @@ public class drawDiagonal {
                     System.out.print(" ");
                 }
             }
-            i++;
         }
     }
 }
