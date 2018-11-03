@@ -25,22 +25,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="44" />
+          <entry key="java" value="45" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="44" />
+          <entry key="JAVA" value="45" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="13277" />
+          <entry key="java" value="13596" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="13276" />
+          <entry key="JAVA" value="13595" />
           <entry key="RegExp" value="1" />
         </counts>
       </usages-collector>
@@ -61,11 +61,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/parametricAverage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="30" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/drawChessTable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="56" lean-forward="true" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -121,6 +130,7 @@
         <option value="$PROJECT_DIR$/src/drawDiagonal.java" />
         <option value="$PROJECT_DIR$/src/guessTheNumber.java" />
         <option value="$PROJECT_DIR$/src/parametricAverage.java" />
+        <option value="$PROJECT_DIR$/src/drawChessTable.java" />
       </list>
     </option>
   </component>
@@ -167,7 +177,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541278924989" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541282161070" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -187,16 +197,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.parametricAverage">
-    <configuration name="drawDiagonal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="drawDiagonal" />
+  <component name="RunManager" selected="Application.drawChessTable">
+    <configuration name="drawChessTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="drawChessTable" />
       <module name="Workshop" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="drawPyramid" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="drawPyramid" />
+    <configuration name="drawDiagonal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="drawDiagonal" />
       <module name="Workshop" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -224,19 +234,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.drawPyramid" />
       <item itemvalue="Application.drawSquare" />
       <item itemvalue="Application.drawDiagonal" />
       <item itemvalue="Application.guessTheNumber" />
       <item itemvalue="Application.parametricAverage" />
+      <item itemvalue="Application.drawChessTable" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.drawChessTable" />
         <item itemvalue="Application.parametricAverage" />
         <item itemvalue="Application.guessTheNumber" />
         <item itemvalue="Application.drawDiagonal" />
         <item itemvalue="Application.drawSquare" />
-        <item itemvalue="Application.drawPyramid" />
       </list>
     </recent_temporary>
   </component>
@@ -258,7 +268,7 @@
       <workItem from="1541081288165" duration="39000" />
       <workItem from="1541100635124" duration="7271000" />
       <workItem from="1541170980683" duration="4242000" />
-      <workItem from="1541258115685" duration="14907000" />
+      <workItem from="1541258115685" duration="17914000" />
     </task>
     <servers />
   </component>
@@ -274,13 +284,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73784000" />
+    <option name="totallyTimeSpent" value="76791000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="33" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2624161" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26174498" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -289,7 +299,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30212766" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30212766" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -345,6 +355,18 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/drawChessTable.java</url>
+          <line>6</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/helloOthers.java">
@@ -579,6 +601,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="30" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/drawChessTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="56" lean-forward="true" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
         </state>
       </provider>
     </entry>
