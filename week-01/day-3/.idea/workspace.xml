@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b00d1fe-1d57-4e10-9c40-62ee6cc98685" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../day-4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../day-4/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7b00d1fe-1d57-4e10-9c40-62ee6cc98685" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,22 +25,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="46" />
+          <entry key="java" value="47" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="46" />
+          <entry key="JAVA" value="47" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="14310" />
+          <entry key="java" value="14755" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="14309" />
+          <entry key="JAVA" value="14754" />
           <entry key="RegExp" value="1" />
         </counts>
       </usages-collector>
@@ -54,11 +52,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/subStr.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="30" column="75" selection-start-line="30" selection-start-column="75" selection-end-line="30" selection-end-column="75" />
+            <state relative-caret-position="34">
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/palindromeBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="30" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="30" />
+              <folding>
+                <element signature="e#572#573#0" expanded="true" />
+                <element signature="e#608#609#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -116,6 +127,7 @@
         <option value="$PROJECT_DIR$/src/parametricAverage.java" />
         <option value="$PROJECT_DIR$/src/drawChessTable.java" />
         <option value="$PROJECT_DIR$/src/subStr.java" />
+        <option value="$PROJECT_DIR$/src/palindromeBuilder.java" />
       </list>
     </option>
   </component>
@@ -162,7 +174,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541348534197" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541354635376" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -182,7 +194,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.subStr">
+  <component name="RunManager" selected="Application.palindromeBuilder">
     <configuration name="drawChessTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="drawChessTable" />
       <module name="Workshop" />
@@ -190,15 +202,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="drawDiagonal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="drawDiagonal" />
+    <configuration name="guessTheNumber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="guessTheNumber" />
       <module name="Workshop" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="guessTheNumber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="guessTheNumber" />
+    <configuration name="palindromeBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="palindromeBuilder" />
       <module name="Workshop" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -219,19 +231,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.drawDiagonal" />
       <item itemvalue="Application.guessTheNumber" />
       <item itemvalue="Application.parametricAverage" />
       <item itemvalue="Application.drawChessTable" />
       <item itemvalue="Application.subStr" />
+      <item itemvalue="Application.palindromeBuilder" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.palindromeBuilder" />
         <item itemvalue="Application.subStr" />
         <item itemvalue="Application.drawChessTable" />
         <item itemvalue="Application.parametricAverage" />
         <item itemvalue="Application.guessTheNumber" />
-        <item itemvalue="Application.drawDiagonal" />
       </list>
     </recent_temporary>
   </component>
@@ -254,7 +266,7 @@
       <workItem from="1541100635124" duration="7271000" />
       <workItem from="1541170980683" duration="4242000" />
       <workItem from="1541258115685" duration="18219000" />
-      <workItem from="1541345346305" duration="2653000" />
+      <workItem from="1541345346305" duration="4601000" />
     </task>
     <servers />
   </component>
@@ -270,7 +282,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79749000" />
+    <option name="totallyTimeSpent" value="81697000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="33" width="1550" height="838" extended-state="6" />
@@ -587,8 +599,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/subStr.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="30" column="75" selection-start-line="30" selection-start-column="75" selection-end-line="30" selection-end-column="75" />
+        <state relative-caret-position="34">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/palindromeBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="30" />
+          <folding>
+            <element signature="e#572#573#0" expanded="true" />
+            <element signature="e#608#609#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
