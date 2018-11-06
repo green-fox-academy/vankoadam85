@@ -19,22 +19,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="3" />
+          <entry key="java" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="3" />
+          <entry key="JAVA" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="636" />
+          <entry key="java" value="866" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="636" />
+          <entry key="JAVA" value="866" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.run.usages" />
@@ -63,11 +63,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TakesLonger.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="24" selection-start-column="13" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/TodoPrint.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -90,6 +99,7 @@
         <option value="$PROJECT_DIR$/src/SimpleReplace.java" />
         <option value="$PROJECT_DIR$/src/UrlFixer.java" />
         <option value="$PROJECT_DIR$/src/TakesLonger.java" />
+        <option value="$PROJECT_DIR$/src/TodoPrint.java" />
       </list>
     </option>
   </component>
@@ -136,7 +146,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541510004638" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541510867072" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -153,7 +163,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TakesLonger">
+  <component name="RunManager" selected="Application.TodoPrint">
     <configuration name="SimpleReplace" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SimpleReplace" />
       <module name="Strings and ArrayLists" />
@@ -163,6 +173,13 @@
     </configuration>
     <configuration name="TakesLonger" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TakesLonger" />
+      <module name="Strings and ArrayLists" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TodoPrint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TodoPrint" />
       <module name="Strings and ArrayLists" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -179,9 +196,11 @@
       <item itemvalue="Application.SimpleReplace" />
       <item itemvalue="Application.UrlFixer" />
       <item itemvalue="Application.TakesLonger" />
+      <item itemvalue="Application.TodoPrint" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TodoPrint" />
         <item itemvalue="Application.TakesLonger" />
         <item itemvalue="Application.UrlFixer" />
         <item itemvalue="Application.SimpleReplace" />
@@ -198,12 +217,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1541502044721</updated>
-      <workItem from="1541502048176" duration="5779000" />
+      <workItem from="1541502048176" duration="6511000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5779000" />
+    <option name="totallyTimeSpent" value="6511000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="33" width="1550" height="838" extended-state="6" />
@@ -264,6 +283,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="24" selection-start-column="13" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TodoPrint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
         </state>
       </provider>
     </entry>
