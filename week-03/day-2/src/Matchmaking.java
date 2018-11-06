@@ -9,17 +9,13 @@ public class Matchmaking{
                 match.add(list1.get(i));
                 match.add(list2.get(i));
             }
-            for (int j = list1.size(); j < list2.size() ; j++) {
-                match.add(list2.get(j));
-            }
+            match.addAll(list2.subList(list1.size(), list2.size()));
         } else {
             for (int i = 0; i < list2.size(); i++) {
                 match.add(list1.get(i));
                 match.add(list2.get(i));
             }
-            for (int j = list2.size(); j < list1.size() ; j++) {
-                match.add(list1.get(j));
-            }
+            match.addAll(list1.subList(list2.size(), list1.size()));
         }
         return match;
     }
