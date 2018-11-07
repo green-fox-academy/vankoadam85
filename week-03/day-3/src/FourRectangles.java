@@ -10,9 +10,9 @@ public class FourRectangles {
         // draw four different size and color rectangles.
         // avoid code duplication.
         for (int i = 0; i < 4; i++) {
-            int size = (int)(Math.random() * 50 + 50);
             graphics.setColor(new Color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256)));
-            graphics.fillRect((int)(Math.random()*156), (int)(Math.random()*156), size, size);
+            graphics.fillRect((int)(Math.random()*156), (int)(Math.random()*156),
+                    (int)(Math.random() * 50 + 50), (int)(Math.random() * 50 + 50));
             }
         }
 
