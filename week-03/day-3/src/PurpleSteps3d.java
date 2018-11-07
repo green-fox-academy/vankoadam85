@@ -9,9 +9,10 @@ public class PurpleSteps3d {
         // Reproduce this:
         // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps-3d/r4.png]
         graphics.setColor(new Color(148,0,211));
-        for (int i = 10; i < 210 ; i += i) {
-            graphics.fillRect(i, i, i, i);
-            
+        int coord = 10;
+        for (int i = 10; i <= 60; i += 10) {
+            graphics.fillRect(coord, coord, i, i);
+            coord += i;
         }
 
     }
