@@ -17,13 +17,14 @@ public class BlogPost {
     System.out.println(post.get("title"));
     System.out.println("\n" + post.get("text"));
     System.out.println(post.get("publicationDate"));
+    System.out.println("---");
   }
-
-  public void update (String fieldToUpdate, String update) {
-    if (post.containsKey(fieldToUpdate)) {
-      post.put(fieldToUpdate, update);
-    } else {
-      System.out.println("No such field in this post");
-    }
-  }
+//
+//  public void update (String fieldToUpdate, String update) {
+//    if (post.containsKey(fieldToUpdate)) {
+//      post.put(fieldToUpdate, update);
+//    } else {
+//      System.out.println("No such field in this post");
+//    }
+//  }
 }

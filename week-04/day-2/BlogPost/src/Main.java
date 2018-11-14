@@ -10,5 +10,11 @@ public class Main {
         "Daniel Hanley, a cybersecurity engineer at IBM, doesn’t want to be the center of attention. \n" +
             "When I asked to take his picture outside one of IBM’s New York City offices, he told me that he wasn’t really into the whole organizer profile thing.",
         "2017.03.28.");
+
+    Blog whatever = new Blog();
+    whatever.addBlog(post1);
+    whatever.addBlog(post2);
+    whatever.addBlog(post3);
+
   }
 }
