@@ -24,11 +24,15 @@ public class Plant {
     return waterLevel < wateringThreshold;
   }
 
-  void status() {
+  void gettingWatered (double waterAmount) {
+    waterLevel += waterAmount * waterAbsorption;
+  }
+
+  String status() {
     if (needsWatering()) {
-      System.out.println("The " + this.color + " " + getClass() + " needs water");
+      return "The " + this.color + " " + this.getClass().getSimpleName() + " needs water\n";
     } else {
-      System.out.println("The " + this.color + " " + getClass() + " doesn't need water");
+      return "The " + this.color + " " + this.getClass().getSimpleName() + " doesn't need water\n";
     }
   }
 

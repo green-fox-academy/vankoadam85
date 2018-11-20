@@ -4,7 +4,7 @@ public class Flower extends Plant {
 
   Flower(String color) {
     super(color);
-    setWaterAbsorption(7.5);
+    setWaterAbsorption(0.75);
     setWateringThreshold(5);
   }
 }
