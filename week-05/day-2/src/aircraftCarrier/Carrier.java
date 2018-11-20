@@ -67,8 +67,8 @@ public class Carrier {
 
   public String getStatus() {
     String statusReport = "HP: " + healthPoints + ", Aircraft count: " + airForce.size() + ", Ammo Storage: "
-          + ammoStorage + ", Total damage: " + this.potentialDamage() + "\n" + "Aircrafts:";
-    if (healthPoints == 0) {
+          + ammoStorage + ", Total damage: " + this.potentialDamage() + "\n" + "Aircrafts:\n";
+    if (healthPoints <= 0) {
       return "It's dead Jim :(";
     } else {
       for (Aircraft aircraft : airForce) {
