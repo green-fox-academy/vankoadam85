@@ -1,3 +1,5 @@
+package inheritanceHomework;
+
 public class Student {
   String name;
   int age;

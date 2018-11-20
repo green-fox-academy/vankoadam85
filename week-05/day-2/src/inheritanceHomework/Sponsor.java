@@ -1,3 +1,5 @@
+package inheritanceHomework;
+
 public class Sponsor {
   String name;
   int age;

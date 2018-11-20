@@ -1,3 +1,5 @@
+package inheritanceHomework;
+
 public class Mentor {
   String name;
   int age;
