@@ -20,4 +20,28 @@ public class Aircraft {
     return damage;
   }
 
+  public int refill(int refillAmmo) {
+    int ammoToRefill = this.maxAmmo - this.ammo;
+    if (refillAmmo > ammoToRefill) {
+      this.ammo = this.maxAmmo;
+      return refillAmmo - ammoToRefill;
+    } else {
+      this.ammo += refillAmmo;
+      return 0;
+    }
+  }
+
+  public String getType() {
+    return this.getClass().getSimpleName();
+  }
+
+  public String getStatus() {
+    return "Type " + this.getType() + ", Ammo: " + this.ammo + ", Base Damage: " + this.baseDamage + ", All Damage: " +
+        this.ammo * this.baseDamage;
+  }
+
+  public Boolean isPriority() {
+      return priority;
+  }
+
 }
