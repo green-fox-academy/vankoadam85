@@ -1,24 +1,18 @@
 package inheritanceHomework;
 
-public class Sponsor {
-  String name;
-  int age;
-  String gender;
+public class Sponsor extends Person {
+
   String company;
   int hiredStudents;
 
   Sponsor (String name, int age, String gender, String company) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
+    super(name, age, gender);
     this.company = company;
     this.hiredStudents = 0;
   }
 
   Sponsor () {
-    this.name = "Jane Doe";
-    this.age = 30;
-    this.gender = "female";
+    super();
     this.company = "Google";
     this.hiredStudents = 0;
   }

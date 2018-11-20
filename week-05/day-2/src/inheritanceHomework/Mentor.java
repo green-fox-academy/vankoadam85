@@ -1,22 +1,16 @@
 package inheritanceHomework;
 
-public class Mentor {
-  String name;
-  int age;
-  String gender;
+public class Mentor extends Person {
+
   String level;
 
   Mentor (String name, int age, String gender, String level) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
+    super(name, age, gender);
     this.level = level;
   }
 
   Mentor () {
-    this.name = "Jane Doe";
-    this.age = 30;
-    this.gender = "female";
+    super();
     this.level = "intermediate";
   }
 

@@ -1,24 +1,18 @@
 package inheritanceHomework;
 
-public class Student {
-  String name;
-  int age;
-  String gender;
+public class Student extends Person {
+
   String previousOrganization;
   int skippedDays;
 
   Student (String name, int age, String gender, String previousOrganization) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
+    super(name, age, gender);
     this.previousOrganization = previousOrganization;
     this.skippedDays =0;
   }
 
   Student () {
-    this.name = "Jane Doe";
-    this.age = 30;
-    this.gender = "female";
+    super();
     this.previousOrganization = "The School of Life";
     this.skippedDays =0;
   }
