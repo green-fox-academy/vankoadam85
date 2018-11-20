@@ -14,8 +14,12 @@ public class Aircraft {
     this.priority = priority;
   }
 
+  public int potentialDamage() {
+    return this.ammo * this.baseDamage;
+  }
+
   public int fight() {
-    int damage = ammo * baseDamage;
+    int damage = potentialDamage();
     this.ammo = 0;
     return damage;
   }
@@ -35,13 +39,13 @@ public class Aircraft {
     return this.getClass().getSimpleName();
   }
 
-  public String getStatus() {
-    return "Type " + this.getType() + ", Ammo: " + this.ammo + ", Base Damage: " + this.baseDamage + ", All Damage: " +
-        this.ammo * this.baseDamage;
-  }
-
   public Boolean isPriority() {
       return priority;
+  }
+
+  public String getStatus() {
+    return "Type " + this.getType() + ", Ammo: " + this.ammo + ", Base Damage: " + this.baseDamage + ", All Damage: " +
+        this.ammo * this.baseDamage + "\n";
   }
 
 }
