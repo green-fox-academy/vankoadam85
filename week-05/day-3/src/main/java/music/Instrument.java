@@ -4,6 +4,6 @@ public abstract class Instrument {
 
   protected String name;
 
-  protected abstract void play();
+  public abstract void play();
 
 }

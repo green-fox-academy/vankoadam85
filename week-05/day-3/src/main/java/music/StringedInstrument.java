@@ -5,8 +5,8 @@ public abstract class StringedInstrument extends Instrument {
   protected int numberOfStrings;
 
   @Override
-  protected void play() {
-    System.out.println(name + ", " + numberOfStrings + "-stringed instrument that goes " + sound());
+  public void play() {
+    System.out.println(name + ", a " + numberOfStrings + "-stringed instrument that goes " + sound());
   }
 
   protected abstract String sound();
