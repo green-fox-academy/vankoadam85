@@ -20,10 +20,15 @@ public class Pirate {
 
   private void passedOut() {
     System.out.println("he's passed out");
+    isConscious = true;
+  }
+
+  public boolean isCapable() {
+    return isAlive && isConscious;
   }
 
   public void drinkSomeRum () {
-    if (isAlive && isConscious) {
+    if (isCapable()) {
       drinks++;
       System.out.println("'tis nah all th' rum, right?");
     } else if (isAlive) {
@@ -38,11 +43,10 @@ public class Pirate {
       System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
       isConscious = false;
       drinks = 0;
-    } else if (isAlive && isConscious) {
+    } else if (isCapable()) {
       System.out.println("Pour me anudder!");
     } else if (isAlive && !isConscious) {
       passedOut();
-      isConscious = true;
     } else {
       dead();
     }
@@ -51,7 +55,6 @@ public class Pirate {
   public void brawl (Pirate opponent) {
     if (!isConscious) {
       passedOut();
-      isConscious = true;
     } else if (!opponent.isConscious && opponent.isAlive) {
       opponent.isAlive = false;
       System.out.println("Bad time fer a nap, scallywag!");

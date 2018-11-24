@@ -49,24 +49,31 @@ public class Ship {
     System.out.println("The ship has " + crewAlive() + " alive crew members.");
   }
 
-
-  public Boolean battle(Ship opponent) {
-    int score = crewAlive() - captainsRum() - opponent.crewAlive() + opponent.captainsRum();
-    if (score > 0) {
-      for (int i = 0; i < crewAlive() - 1; i++) {
+  private void winnersCelebration() {
+    for (int i = 0; i < ship.size(); i++) {
+      if (ship.get(i).isCapable()) {
         ship.get(i).drinks += (int) (Math.random() * 6);
       }
-      for (int i = 0; i < opponent.crewAlive() - 1; i++) {
-        opponent.ship.get(i).isAlive = Math.random() * 2 >= 1;
-      }
-    } else {
-      for (int i = 0; i < opponent.crewAlive() - 1; i++) {
-        opponent.ship.get(i).drinks += (int) (Math.random() * 6);
-      }
-      for (int i = 0; i < crewAlive() - 1; i++) {
+    }
+  }
+
+  private void losersPunishment() {
+    for (int i = 0; i < ship.size() ; i++) {
+      if (ship.get(i).isAlive) {
         ship.get(i).isAlive = Math.random() * 2 >= 1;
       }
     }
-      return score > 0;
+  }
+
+  public boolean battle(Ship opponent) {
+    int score = crewAlive() - captainsRum() - opponent.crewAlive() + opponent.captainsRum();
+    if (score > 0) {
+      this.winnersCelebration();
+      opponent.losersPunishment();
+    } else {
+      opponent.winnersCelebration();
+      this.losersPunishment();
     }
+      return score > 0;
+  }
 }
