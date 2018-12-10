@@ -10,6 +10,10 @@ public class Card implements Comparable<Card> {
     this.suit = suit;
   }
 
+  Card(String valueSuit) {
+    this("" + valueSuit.charAt(0), "" + valueSuit.charAt(1));
+  }
+
   public int getNumericValue() {
     switch (this.value) {
       case "A":

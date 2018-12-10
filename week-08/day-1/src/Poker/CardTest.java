@@ -16,6 +16,16 @@ public class CardTest {
   Card twoOfSpades = new Card("2", "S");
 
   @Test
+  public void testSingleInputConstructor() {
+    Card testCard = new Card("2S");
+    Card testCard2 = new Card("QS");
+    assertEquals(twoOfSpades.getValue(), testCard.getValue());
+    assertEquals(twoOfSpades.getSuit(), testCard.getSuit());
+    assertEquals(queenOfSpades.getValue(), testCard2.getValue());
+    assertEquals(queenOfSpades.getSuit(), testCard2.getSuit());
+  }
+
+  @Test
   public void testCompareTo() {
     assertTrue(aceOfSpades.compareTo(queenOfSpades) < 0);
     assertTrue(queenOfSpades.compareTo(aceOfSpades) > 0);
