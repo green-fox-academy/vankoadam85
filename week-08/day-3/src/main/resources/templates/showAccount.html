@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank Account Details</title>
+</head>
+<body>
+    <h1>Bank Account Details</h1>
+    <div th:object="${bankAccount}" name="accountDetails">
+        <p th:text="|Account owner: *{name}|"></p>
+        <p th:text="|Balance: *{balance}|"></p>
+        <p th:text="|Owner animal type: *{animalType}|"></p>
+        <p>whatever</p>
+    </div>
+
+</body>
+</html>
