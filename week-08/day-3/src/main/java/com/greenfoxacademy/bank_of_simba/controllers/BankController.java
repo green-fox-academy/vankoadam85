@@ -13,7 +13,7 @@ public class BankController {
 
   @GetMapping("/show")
   public String showAccount(Model model) {
-    BankAccount bankAccount = new BankAccount("Simba", 2000, "lion");
+    BankAccount bankAccount = new BankAccount("Simba", 2000, "lion", true);
     model.addAttribute("bankAccount", bankAccount);
     return "showAccount";
   }

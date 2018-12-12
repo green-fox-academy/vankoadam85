@@ -13,7 +13,7 @@ public class BankAccountList {
   }
 
   private void fillList() {
-    bankAccountList.add(new BankAccount("Simba", 2000, "lion"));
+    bankAccountList.add(new BankAccount("Simba", 2000, "lion", true));
     bankAccountList.add(new BankAccount("Zazu", 750, "hornbill"));
     bankAccountList.add(new BankAccount("Rafiki", 0, "mandrill "));
     bankAccountList.add(new BankAccount("Scar", 1500, "lion"));

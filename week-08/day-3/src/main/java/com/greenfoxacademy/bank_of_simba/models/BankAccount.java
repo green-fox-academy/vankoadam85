@@ -6,16 +6,25 @@ public class BankAccount {
   private double balance;
   private String animalType;
   private String currency;
+  private boolean isOwnerKing;
 
-  public BankAccount(String name, int balance, String animalType, String currency) {
+  public BankAccount(String name, int balance, String animalType, String currency, boolean isOwnerKing) {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
     this.currency = currency;
+    this.isOwnerKing = isOwnerKing;
+  }
+
+  public BankAccount(String name, int balance, String animalType, String currency) {
+    this(name, balance, animalType, currency, false);
+  }
+  public BankAccount(String name, int balance, String animalType, boolean isOwnerKing) {
+    this(name, balance, animalType, "Zebra", isOwnerKing);
   }
 
   public BankAccount(String name, int balance, String animalType) {
-    this(name, balance, animalType, "Zebra");
+    this(name, balance, animalType, "Zebra", false);
   }
 
   public String getCurrency() {
@@ -48,5 +57,13 @@ public class BankAccount {
 
   public void setAnimalType(String animalType) {
     this.animalType = animalType;
+  }
+
+  public boolean isOwnerKing() {
+    return isOwnerKing;
+  }
+
+  public void setOwnerKing(boolean ownerKing) {
+    isOwnerKing = ownerKing;
   }
 }
