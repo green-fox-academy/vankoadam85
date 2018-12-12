@@ -1,6 +1,7 @@
 package com.greenfoxacademy.bank_of_simba.controllers;
 
 import com.greenfoxacademy.bank_of_simba.models.BankAccount;
+import com.greenfoxacademy.bank_of_simba.models.BankAccountList;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +19,13 @@ public class BankController {
   @GetMapping("/HTMLception")
   public String HTMLception() {
     return "HTMLception";
+  }
+
+  @GetMapping("/showAllAccounts")
+  public String showAllAccounts(Model model) {
+    BankAccountList bankAccountList = new BankAccountList();
+    model.addAttribute("bankAccountList", bankAccountList);
+    return "showAll";
   }
 
 }
