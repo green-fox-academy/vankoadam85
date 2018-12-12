@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class BankController {
 
+  BankAccountList bankAccountList = new BankAccountList();
+
   @GetMapping("/show")
   public String showAccount(Model model) {
     BankAccount bankAccount = new BankAccount("Simba", 2000, "lion");
@@ -23,8 +25,7 @@ public class BankController {
 
   @GetMapping("/showAllAccounts")
   public String showAllAccounts(Model model) {
-    BankAccountList bankAccountList = new BankAccountList();
-    model.addAttribute("bankAccountList", bankAccountList);
+    model.addAttribute("bankAccountList", bankAccountList.getBankAccountList());
     return "showAll";
   }
 

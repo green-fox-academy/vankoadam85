@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show all Accounts</title>
+</head>
+<body>
+  <table>
+      <thead>
+         <tr>
+              <th>Account owner</th>
+              <th>Balance</th>
+              <th>Currency</th>
+              <th>Owner animal type</th>
+         </tr>
+      </thead>
+      <tbody>
+           <tr th:each="bankAccount : ${bankAccountList}">
+               <td th:text="|${bankAccount.name}|"></td>
+               <td th:text="|${#numbers.formatDecimal(bankAccount.balance, 0, 'COMMA', 2, 'POINT')}|"></td>
+               <td th:text="|${bankAccount.currency}|"></td>
+               <td th:text="|${bankAccount.animalType}|"></td>
+           </tr>
+       </tbody>
+   </table>
+</body>
+</html>
