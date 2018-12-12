@@ -15,4 +15,9 @@ public class BankController {
     return "showAccount";
   }
 
+  @GetMapping("/HTMLception")
+  public String HTMLception() {
+    return "HTMLception";
+  }
+
 }
