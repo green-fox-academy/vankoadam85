@@ -1,4 +1,4 @@
-package com.greenfoxacademy.dependency_practice.Service;
+package com.greenfoxacademy.dependency_practice.service;
 
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,4 @@
-package com.greenfoxacademy.dependency_practice.Service;
-
-import org.springframework.stereotype.Service;
+package com.greenfoxacademy.dependency_practice.service;
 
 public class RedColor implements MyColor {
   @Override
