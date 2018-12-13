@@ -4,7 +4,7 @@ import com.greenfoxacademy.dependency_practice.service.UtilityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class DIPracticeController {
@@ -16,9 +16,15 @@ public class DIPracticeController {
     this.utilityService = utilityService;
   }
 
-  @RequestMapping("/useful")
-  public String usefulPage(Model model) {
-    model.addAttribute("backgroundColor", utilityService.randomColor());
+  @GetMapping("/useful")
+  public String usefulPage() {
     return "useful";
   }
+
+  @GetMapping("/useful/colored")
+  public String coloredBackgroundPage(Model model) {
+    model.addAttribute("backgroundColor", utilityService.randomColor());
+    return "coloredBackground";
+  }
+
 }
