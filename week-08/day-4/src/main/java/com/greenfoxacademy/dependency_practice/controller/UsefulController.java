@@ -37,4 +37,16 @@ public class UsefulController {
     return "validateEmail";
   }
 
+  @GetMapping("/encode")
+  public String caesarEncode(@RequestParam("text") String text, @RequestParam("number") int number, Model model) {
+    model.addAttribute("resultingText", utilityService.caesarEncode(text, number));
+    return "caesarText";
+  }
+
+  @GetMapping("/decode")
+  public String caesarDecode(@RequestParam("text") String text, @RequestParam("number") int number, Model model) {
+    model.addAttribute("resultingText", utilityService.caesarEncode(text, -number));
+    return "caesarText";
+  }
+
 }
