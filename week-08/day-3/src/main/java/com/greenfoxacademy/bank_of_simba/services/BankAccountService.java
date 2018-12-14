@@ -1,13 +1,17 @@
-package com.greenfoxacademy.bank_of_simba.models;
+package com.greenfoxacademy.bank_of_simba.services;
+
+import com.greenfoxacademy.bank_of_simba.models.BankAccount;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BankAccountList {
+@Service
+public class BankAccountService {
 
   private List<BankAccount> bankAccountList;
 
-  public BankAccountList() {
+  public BankAccountService() {
     bankAccountList = new ArrayList<>();
     fillList();
   }
@@ -26,5 +30,15 @@ public class BankAccountList {
 
   public void addToBankAccountList(BankAccount bankAccount) {
     bankAccountList.add(bankAccount);
+  }
+
+  public void raiseBalance(String name) {
+    for (BankAccount bankAccount : bankAccountList) {
+      if(bankAccount.getName().equals(name) && bankAccount.isOwnerKing()) {
+        bankAccount.setBalance(bankAccount.getBalance() + 100);
+      } else if(bankAccount.getName().equals(name)) {
+        bankAccount.setBalance(bankAccount.getBalance() + 10);
+      }
+    }
   }
 }
