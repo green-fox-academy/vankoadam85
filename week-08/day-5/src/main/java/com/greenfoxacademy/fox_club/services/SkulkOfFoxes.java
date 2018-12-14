@@ -18,7 +18,7 @@ public class SkulkOfFoxes {
     return foxes;
   }
 
-  public void addFox(Fox fox) {
+  public void addFox(Fox fox){
     this.foxes.add(fox);
   }
 
@@ -28,7 +28,9 @@ public class SkulkOfFoxes {
         return fox;
       }
     }
-    return null;
+    Fox newFox = new Fox(name);
+    this.addFox(newFox);
+    return newFox;
   }
 
 }
