@@ -11,7 +11,7 @@ public class Fox {
   private String drink;
   private String imgLocation;
 
-  Fox(String name) {
+  public Fox(String name) {
     this.name = name;
     this.tricks = new ArrayList<>();
     this.food = "squab";
