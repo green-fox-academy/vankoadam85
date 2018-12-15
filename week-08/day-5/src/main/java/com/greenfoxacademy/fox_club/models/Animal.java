@@ -1,12 +1,11 @@
 package com.greenfoxacademy.fox_club.models;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public abstract class Animal {
 
   private String name;
-  private List<String> tricks;
+  private ArrayList<String> tricks;
   String food;
   String drink;
   String imgLocation;
@@ -21,11 +20,7 @@ public abstract class Animal {
     return name;
   }
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public List<String> getTricks() {
+  public ArrayList<String> getTricks() {
     return tricks;
   }
 
@@ -53,8 +48,7 @@ public abstract class Animal {
     return imgLocation;
   }
 
-  public void setImgLocation(String imgLocation) {
-    this.imgLocation = imgLocation;
+  public String getSpecies() {
+    return species;
   }
-
 }

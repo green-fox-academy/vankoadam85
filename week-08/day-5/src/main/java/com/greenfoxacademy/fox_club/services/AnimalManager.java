@@ -1,10 +1,10 @@
 package com.greenfoxacademy.fox_club.services;
 
 import com.greenfoxacademy.fox_club.models.Animal;
+import com.greenfoxacademy.fox_club.models.Fox;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.function.Predicate;
 
 @Service
 public class AnimalManager {
@@ -24,7 +24,15 @@ public class AnimalManager {
   }
 
   public boolean doesAnimalExist(String name) {
-    return animals.stream().anyMatch(animal -> animal.getName().equals(name));
+    return animals.stream()
+        .anyMatch(animal -> animal.getName().equals(name));
+  }
+
+  public Animal getAnimalByName(String name) {
+    return animals.stream()
+        .filter(animal -> animal.getName().equals(name))
+        .findFirst()
+        .get();
   }
 
 }

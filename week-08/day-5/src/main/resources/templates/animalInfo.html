@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Information</title>
+</head>
+<body>
+    <ul>
+        <li><a th:href="@{/}">Nutrition Store</a></li>
+        <li><a th:href="@{/}">Trick Center</a></li>
+    </ul>
+    <div th:object="${animal}">
+        <img th:src="*{getImgLocation()}"/>
+        <p th:text="|This is *{getName()} the *{getSpecies()} currently living on *{getFood()} and *{getDrink()}.
+        He knows *{getTricks().size()} trick(s)|"></p>
+        <div class="tricks">
+            <h1 th:if="*{getTricks().size() == 0}">No known tricks</h1>
+            <h1 th:unless="*{getTricks().size() == 0}">Known tricks</h1>
+            <ul th:each="trick : *{getTricks()}">
+                <li th:text="${trick}"></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
