@@ -1,7 +1,6 @@
 package com.greenfoxacademy.fox_club.controllers;
 
-import com.greenfoxacademy.fox_club.models.Fox;
-import com.greenfoxacademy.fox_club.services.SkulkOfFoxes;
+import com.greenfoxacademy.fox_club.services.AnimalManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,27 +12,30 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class MainController {
 
-  private SkulkOfFoxes foxes;
+  private AnimalManager animals;
 
   @Autowired
-  MainController(SkulkOfFoxes skulkOfFoxes) {
-    this.foxes = skulkOfFoxes;
+  MainController(AnimalManager animalManager) {
+    this.animals = animalManager;
   }
 
   @GetMapping("/")
-  public String login(@ModelAttribute(name="fox") Fox fox) {
+  public String login(@ModelAttribute(name="name") String name) {
     return "login";
   }
 
   @PostMapping("/")
-  public String getFox(@ModelAttribute(name="fox") Fox fox) {
-    foxes.addFox(fox);
-    return "redirect:/foxInfo?name=" + fox.getName();
+  public String getAnimal(@ModelAttribute(name="name") String name) {
+    if(animals.doesAnimalExist(name)) {
+      return "redirect:/info" + name;
+    } else {
+      return "redirect:/createAnimal";
+    }
   }
 
   @GetMapping("/foxInfo")
   public String getFoxInfo(@RequestParam(value = "name") String name, Model model) {
-    model.addAttribute("fox", foxes.getFoxByName(name));
+    model.addAttribute("fox", animals.getFoxByName(name));
     return "foxInfo";
   }
 

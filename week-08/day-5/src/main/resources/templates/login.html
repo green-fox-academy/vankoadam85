@@ -2,16 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>FoxClub Login</title>
+    <title>Wild Animal Login</title>
 </head>
 <body>
-    <h1>Welcome to the FoxClub!</h1>
-    <p>What is the name of your fox? (If there is no fox by that name, a new will be created)</p>
-    <form action="#" th:action="@{/}" th:object="${fox}" method="post">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" th:field="*{name}" required>
+    <h1>Welcome to the Wild Animal Club!</h1>
+    <p>What is the name of your animal?</p>
+    <form action="#" th:action="@{/}" th:object="${name}" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}" required>
         <button type="submit">get</button>
     </form>
-
 </body>
 </html>
