@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Wild Animal Login</title>
@@ -7,10 +7,9 @@
 <body>
     <h1>Welcome to the Wild Animal Club!</h1>
     <p>What is the name of your animal?</p>
-    <form action="#" th:action="@{/}" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" th:object="${name}" required>
-        <button type="submit">get</button>
+    <form action="/" method="get">
+        <input type="text" name="animalName" placeholder="Name" required>
+        <button type="submit">find</button>
     </form>
 </body>
 </html>

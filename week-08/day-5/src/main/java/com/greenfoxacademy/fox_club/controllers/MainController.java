@@ -17,14 +17,11 @@ public class MainController {
   }
 
   @GetMapping("/")
-  public String login(@ModelAttribute(name="name") String name) {
-    return "login";
-  }
-
-  @PostMapping("/")
-  public String getAnimal(@ModelAttribute(name="name") String name) {
-    if(animals.doesAnimalExist(name)) {
-      return "redirect:/info/" + name;
+  public String getAnimal(@RequestParam(value = "animalName", required = false) String animalName) {
+    if (animalName == null) {
+      return "login";
+    } else if(animals.doesAnimalExist(animalName)) {
+      return "redirect:/info/" + animalName;
     } else {
       return "redirect:/createAnimal";
     }
