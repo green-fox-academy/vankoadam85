@@ -23,7 +23,7 @@ public class TodoService {
     return allTodo;
   }
 
-  public  ArrayList<Todo> getAllActiveTodo() {
+  public ArrayList<Todo> getAllActiveTodo() {
     ArrayList<Todo> allActiveTodo = new ArrayList<>();
     for (Todo todo : todoRepository.findAll()) {
       if(!todo.isDone()) {
@@ -31,6 +31,10 @@ public class TodoService {
       }
     }
     return allActiveTodo;
+  }
+
+  public void addNewTodo(Todo todo) {
+    todoRepository.save(todo);
   }
 
 }

@@ -43,4 +43,12 @@ public class Todo {
   public long getId() {
     return id;
   }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public void setUrgent(boolean urgent) {
+    this.urgent = urgent;
+  }
 }
