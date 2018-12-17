@@ -3,12 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Todo CRUD App</title>
+    <link rel="stylesheet" th:href="@{/list.css}"/>
 </head>
 <body>
     <h1>Todos for today</h1>
-    <ul th:each="todo : ${todoIterable}" th:object="${todo}">
-        <li th:text="*{isUrgent()} ? |*{getTitle()} --- Urgent!| : *{getTitle()}"></li>
-    </ul>
-
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ACTION</th>
+                <th>DONE</th>
+                <th>URGENT</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="todo : ${todoIterable}" th:object="${todo}">
+                <td th:text="*{getId()}"></td>
+                <td th:text="*{getTitle()}"></td>
+                <td th:text="*{isDone()}"></td>
+                <td th:text="*{isUrgent()}"></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
