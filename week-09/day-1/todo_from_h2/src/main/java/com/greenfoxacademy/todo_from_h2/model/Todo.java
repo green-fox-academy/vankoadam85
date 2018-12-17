@@ -14,13 +14,21 @@ public class Todo {
   private boolean urgent;
   private boolean done;
 
-  Todo(String title, boolean urgent) {
+  public Todo() {
+    this.done = false;
+  }
+
+  public Todo(String title, boolean urgent) {
+    this();
     this.title = title;
     this.urgent = urgent;
-    this.done = false;
   }
 
   public String getTitle() {
     return title;
+  }
+
+  public boolean isUrgent() {
+    return urgent;
   }
 }
