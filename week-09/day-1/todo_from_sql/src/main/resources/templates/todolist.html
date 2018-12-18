@@ -3,30 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Todo CRUD App</title>
-    <link rel="stylesheet" th:href="@{/list.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
+<body class="container">
     <h1>Todos for today</h1>
     <a th:href="@{/todo/addNew}">Add new Todo</a> <br>
     <a th:href="@{|/todo/list?isActive=true|}">Filter active Todo</a>
     <a th:href="@{/todo/list}">Show all todo</a>
-    <table>
-        <thead>
+    <table class="table table-hover">
+        <thead class="thead-dark">
             <tr>
-                <th>ID</th>
-                <th>ACTION</th>
-                <th>URGENT</th>
-                <th>DONE</th>
+                <th class="col-2">ID</th>
+                <th class="col-5">ACTION</th>
+                <th class="col-1">URGENT</th>
+                <th class="col-1">DONE</th>
+                <th class="col-1">DELETE</th>
+                <th class="col-1">EDIT</th>
             </tr>
         </thead>
         <tbody>
             <tr th:each="todo : ${todoList}" th:object="${todo}">
-                <td th:text="*{getId()}"></td>
-                <td th:text="*{getTitle()}"></td>
-                <td th:text="*{isUrgent()}"></td>
-                <td th:text="*{isDone()}"></td>
-                <td><a th:href="@{|*{getId()}/delete|}">delete</a></td>
-                <td><a th:href="@{|*{getId()}/edit|}">edit</a></td>
+                <td class="col-2" th:text="*{getId()}"></td>
+                <td class="col-5" th:text="*{getTitle()}"></td>
+                <td class="col-1" th:text="*{isUrgent()}"></td>
+                <td class="col-1" th:text="*{isDone()}"></td>
+                <td class="col-1"><a th:href="@{|*{getId()}/delete|}">delete</a></td>
+                <td class="col-1"><a th:href="@{|*{getId()}/edit|}">edit</a></td>
             </tr>
         </tbody>
     </table>
