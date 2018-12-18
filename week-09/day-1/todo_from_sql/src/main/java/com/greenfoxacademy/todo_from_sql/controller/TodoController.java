@@ -29,13 +29,14 @@ public class TodoController {
   }
 
   @GetMapping("/addNew")
-  public String addNewTodo(@ModelAttribute("newTodo") Todo todo) {
-    return "addNewTodo";
+  public String addNewTodo() {
+    return "newTodo";
   }
 
   @PostMapping("/addNew")
-  public String createNewTodo(@ModelAttribute("newTodo") Todo todo) {
-    todoService.addNewTodo(todo);
-    return "redirect:/todo/";
+  public String createNewTodo(String title, boolean urgent) {
+    todoService.addNewTodo(new Todo(title, urgent));
+    return "redirect:/todo/list";
   }
+
 }
