@@ -7,15 +7,17 @@
 <body>
     <h1>Add new Todo</h1>
     <form action="#" method="post">
-        <!--<label for="title">New Todo description:</label>-->
-        New Todo description:
-        <input type="text" name="title">
+        <label for="title">New Todo description:</label>
+        <input type="text" id="title" name="title">
+        <br><br>
         <fieldset>
             <legend>Is the Todo urgent?</legend>
             <input type="radio" name="urgent" value="true">Yes<br>
             <input type="radio" name="urgent" value="false">No
         </fieldset>
-        <input type="submit">
+        <br><br>
+        <input type="submit" value="Create">
+        <input type="reset" value="Reset">
     </form>
 
 </body>

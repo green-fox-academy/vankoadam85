@@ -23,6 +23,7 @@
                 <td th:text="*{getTitle()}"></td>
                 <td th:text="*{isDone()}"></td>
                 <td th:text="*{isUrgent()}"></td>
+                <td><a th:href="@{|*{getId()}/delete|}">delete</a></td>
             </tr>
         </tbody>
     </table>

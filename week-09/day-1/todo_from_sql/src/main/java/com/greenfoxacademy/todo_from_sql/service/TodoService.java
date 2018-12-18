@@ -37,4 +37,8 @@ public class TodoService {
     todoRepository.save(todo);
   }
 
+  public void deleteTodoById(long id) {
+    todoRepository.deleteById(id);
+  }
+
 }
