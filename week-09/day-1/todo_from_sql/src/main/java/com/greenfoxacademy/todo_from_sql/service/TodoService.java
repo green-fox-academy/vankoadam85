@@ -33,6 +33,10 @@ public class TodoService {
     return allActiveTodo;
   }
 
+  public Todo getTodoById(long id) {
+    return todoRepository.findById(id).get();
+  }
+
   public void addNewTodo(Todo todo) {
     todoRepository.save(todo);
   }

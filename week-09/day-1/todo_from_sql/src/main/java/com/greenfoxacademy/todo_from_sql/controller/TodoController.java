@@ -40,6 +40,12 @@ public class TodoController {
   }
 
   @GetMapping("/{id}/delete")
+  public String confirmDelete(@PathVariable("id") long id, Model model) {
+    model.addAttribute("todo", todoService.getTodoById(id));
+    return "confirmDelete";
+  }
+
+  @PostMapping("/{id}/delete")
   public String deleteTodo(@PathVariable("id") long id) {
     todoService.deleteTodoById(id);
     return "redirect:/todo/list";
