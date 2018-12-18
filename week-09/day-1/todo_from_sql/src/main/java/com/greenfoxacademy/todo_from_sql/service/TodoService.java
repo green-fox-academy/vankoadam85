@@ -45,4 +45,12 @@ public class TodoService {
     todoRepository.deleteById(id);
   }
 
+  public void updateTodoById(long id, String title, boolean urgent, boolean done) {
+    Todo todoToEdit = todoRepository.findById(id).get();
+    todoToEdit.setTitle(title);
+    todoToEdit.setUrgent(urgent);
+    todoToEdit.setDone(done);
+    todoRepository.save(todoToEdit);
+  }
+
 }

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Todo</title>
+</head>
+<body>
+    <h1>Edit Todo</h1>
+    <form action="#" method="post" th:object="${todo}">
+        <input type="text" name="title" th:value="*{getTitle()}" required>
+        <fieldset>
+            <legend>Is Todo urgent?</legend>
+            <input type="radio" name="urgent" value="true" th:checked="*{isUrgent()}"><span>Yes</span>
+            <input type="radio" name="urgent" value="false" th:checked="!*{isUrgent()}"><span>No</span>
+        </fieldset>
+        <fieldset>
+            <legend>Is Todo done?</legend>
+            <input type="radio" name="done" value="true" th:checked="*{isDone()}"><span>Yes</span>
+            <input type="radio" name="done" value="false" th:checked="!*{isDone()}"><span>No</span>
+        </fieldset>
+        <input type="submit" value="Update">
+        <input type="reset" value="Reset">
+        <a href="/todo/list">Cancel</a>
+    </form>
+</body>
+</html>
