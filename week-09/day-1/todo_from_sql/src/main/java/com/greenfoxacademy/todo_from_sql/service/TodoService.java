@@ -53,4 +53,10 @@ public class TodoService {
     todoRepository.save(todoToEdit);
   }
 
+  public void checkTOdoById(long id) {
+    Todo todoToCheck = todoRepository.findById(id).get();
+    todoToCheck.setDone(true);
+    todoRepository.save(todoToCheck);
+  }
+
 }

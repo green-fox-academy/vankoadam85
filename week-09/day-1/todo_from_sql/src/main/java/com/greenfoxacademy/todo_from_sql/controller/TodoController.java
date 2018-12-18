@@ -63,5 +63,10 @@ public class TodoController {
     return "redirect:/todo/list";
   }
 
-}
+  @GetMapping("/{id}/check")
+  public String checkTodo(@PathVariable("id") long id) {
+    todoService.checkTOdoById(id);
+    return "redirect:/todo/list";
+  }
 
+}

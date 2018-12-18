@@ -18,8 +18,9 @@
                 <th class="col-5">ACTION</th>
                 <th class="col-1">URGENT</th>
                 <th class="col-1">DONE</th>
-                <th class="col-1">DELETE</th>
+                <th class="col-1">CHECK</th>
                 <th class="col-1">EDIT</th>
+                <th class="col-1">DELETE</th>
             </tr>
         </thead>
         <tbody>
@@ -28,8 +29,9 @@
                 <td class="col-5" th:text="*{getTitle()}"></td>
                 <td class="col-1" th:text="*{isUrgent()}"></td>
                 <td class="col-1" th:text="*{isDone()}"></td>
-                <td class="col-1"><a th:href="@{|*{getId()}/delete|}">delete</a></td>
+                <td class="col-1"><a th:href="@{|*{getId()}/check|}">check</a></td>
                 <td class="col-1"><a th:href="@{|*{getId()}/edit|}">edit</a></td>
+                <td class="col-1"><a th:href="@{|*{getId()}/delete|}">delete</a></td>
             </tr>
         </tbody>
     </table>
