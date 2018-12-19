@@ -1,26 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Create new Todo</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body class="container">
+    <div th:replace="navbar::nav"></div>
     <h1>Add new Todo</h1>
-    <form action="#" method="post">
+    <form class="form-group" action="#" method="post">
         <label for="title">New Todo description:</label>
-        <input type="text" id="title" name="title">
-        <br><br>
+        <input type="text" class="form-control" id="title" name="title">
         <fieldset>
             <legend>Is the Todo urgent?</legend>
-            <input type="radio" name="urgent" value="true"><span>Yes</span><br>
-            <input type="radio" name="urgent" value="false"><span>No</span>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">Yes
+                        <input type="radio" name="urgent" value="true" class="form-check-input">
+                    </label>
+                    <label class="form-check-label">No
+                        <input type="radio" name="urgent" value="false" class="form-check-input">
+                    </label>
+                </div>
         </fieldset>
         <br><br>
-        <input type="submit" value="Create">
-        <input type="reset" value="Reset">
-        <a href="/todo/list">Cancel</a>
+        <button type="submit" class="btn btn-success">Create</button>
+        <button type="reset" class="btn btn-primary">Reset</button>
+        <a href="/todo/list" class="btn btn-secondary">Cancel</a>
     </form>
 </body>
 </html>

@@ -4,32 +4,36 @@
     <meta charset="UTF-8">
     <title>Delete Todo</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body class="container">
-    <h1>Are you sure you want to delete this Todo?</h1>
-    <table>
-        <thead>
+    <div th:replace="navbar::nav"></div>
+    <h1>Confirm Deletion</h1>
+    <table class="table">
+        <thead class="thead-light">
             <tr>
-                <th>ID</th>
-                <th>ACTION</th>
-                <th>DONE</th>
-                <th>URGENT</th>
+                <th class="col-2">ID</th>
+                <th class="col-5">ACTION</th>
+                <th class="col-1">URGENT</th>
+                <th class="col-1">DONE</th>
             </tr>
         </thead>
         <tbody>
             <tr th:object="${todo}">
-                <td th:text="*{getId()}"></td>
-                <td th:text="*{getTitle()}"></td>
-                <td th:text="*{isDone()}"></td>
-                <td th:text="*{isUrgent()}"></td>
+                <td class="col-2" th:text="*{getId()}"></td>
+                <td class="col-5" th:text="*{getTitle()}"></td>
+                <td class="col-1" th:text="*{isUrgent()}"></td>
+                <td class="col-1" th:text="*{isDone()}"></td>
             </tr>
         </tbody>
     </table>
     <br>
-    <form action="#" method="post">
-        <input type="submit" value="Delete">
+    <form class="form-group" action="#" method="post">
+        <button  type="submit" class="btn btn-danger">Delete</button>
+        <a href="/todo/list" class="btn btn-secondary">Cancel</a>
     </form>
-    <a href="/todo/list">Cancel</a>
 </body>
 </html>
