@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <title th:text="${post.getTitle()}"></title>
+</head>
+<body th:object="${post}" class="container">
+    <h1 th:text="*{getTitle()}" class="text-center display-4"></h1>
+    <p th:text="*{getPostDate()}"></p>
+    <p th:text="*{getPostBody()}"></p>
+    <a th:href="@{|*{getMediaLink()}|}" target="_blank">link</a>
+</body>
+</html>

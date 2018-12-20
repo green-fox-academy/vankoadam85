@@ -17,7 +17,7 @@ public class CloneditController {
     this.cloneditService = cloneditService;
   }
 
-  @RequestMapping("/")
+  @GetMapping("/")
   public String listPosts(Model model) {
     model.addAttribute("posts", cloneditService.getAllPosts());
     return "list_posts";
@@ -44,6 +44,12 @@ public class CloneditController {
   public String downvote(@PathVariable("id") long id) {
     cloneditService.downvotePost(id);
     return "redirect:/";
+  }
+
+  @GetMapping("/post/{id}")
+  public String getPostDetails(@PathVariable("id") long id, Model model) {
+    model.addAttribute("post", cloneditService.getPost(id));
+    return "post_details";
   }
 
 }

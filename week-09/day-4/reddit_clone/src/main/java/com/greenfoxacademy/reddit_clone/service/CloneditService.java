@@ -37,4 +37,8 @@ public class CloneditService {
     cloneditRepository.save(postToDownvote);
   }
 
+  public Post getPost(long id) {
+    return cloneditRepository.findById(id).get();
+  }
+
 }
