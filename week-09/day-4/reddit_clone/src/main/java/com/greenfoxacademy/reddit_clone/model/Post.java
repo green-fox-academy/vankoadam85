@@ -1,5 +1,7 @@
 package com.greenfoxacademy.reddit_clone.model;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -9,12 +11,17 @@ public class Post {
   @Id
   @GeneratedValue
   private long id;
-  @Temporal(TemporalType.TIMESTAMP)
+  @CreationTimestamp
   private Date postDate;
   private String title;
   @Column(columnDefinition = "TEXT")
   private String postBody;
   private String mediaLink;
+  private int score;
+
+  Post() {
+    this.score = 1;
+  }
 
   public long getId() {
     return id;
@@ -36,6 +43,10 @@ public class Post {
     return mediaLink;
   }
 
+  public int getScore() {
+    return score;
+  }
+
   public void setTitle(String title) {
     this.title = title;
   }
@@ -48,4 +59,7 @@ public class Post {
     this.mediaLink = mediaLink;
   }
 
+  public void setScore(int score) {
+    this.score = score;
+  }
 }
