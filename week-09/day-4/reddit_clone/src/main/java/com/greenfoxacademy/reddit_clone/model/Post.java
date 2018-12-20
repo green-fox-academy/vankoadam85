@@ -59,7 +59,12 @@ public class Post {
     this.mediaLink = mediaLink;
   }
 
-  public void setScore(int score) {
-    this.score = score;
+  public void increaseScore() {
+    this.score++;
   }
+
+  public void decreaseScore() {
+    this.score--;
+  }
+
 }

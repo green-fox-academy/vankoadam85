@@ -1,21 +1,29 @@
 package com.greenfoxacademy.reddit_clone.controller;
 
 import com.greenfoxacademy.reddit_clone.model.Post;
-import com.greenfoxacademy.reddit_clone.service.RedditService;
+import com.greenfoxacademy.reddit_clone.service.CloneditService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class RedditController {
+public class CloneditController {
 
-  private RedditService redditService;
+  private CloneditService cloneditService;
 
   @Autowired
-  RedditController(RedditService redditService) {
-    this.redditService = redditService;
+  CloneditController(CloneditService cloneditService) {
+    this.cloneditService = cloneditService;
+  }
+
+  @RequestMapping("/")
+  public String listPosts(Model model) {
+    model.addAttribute("posts", cloneditService.getAllPosts());
+    return "list_posts";
   }
 
   @GetMapping("/new_post")
@@ -25,7 +33,7 @@ public class RedditController {
 
   @PostMapping("/new_post")
   public String saveNewPost(Post post) {
-    redditService.savePost(post);
+    cloneditService.savePost(post);
     return "redirect:/";
   }
 
