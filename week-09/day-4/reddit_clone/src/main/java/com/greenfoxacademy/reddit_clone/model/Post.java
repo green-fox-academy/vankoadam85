@@ -1,0 +1,51 @@
+package com.greenfoxacademy.reddit_clone.model;
+
+import javax.persistence.*;
+import java.util.Date;
+
+@Entity
+public class Post {
+
+  @Id
+  @GeneratedValue
+  private long id;
+  @Temporal(TemporalType.TIMESTAMP)
+  private Date postDate;
+  private String title;
+  @Column(columnDefinition = "TEXT")
+  private String postBody;
+  private String mediaLink;
+
+  public long getId() {
+    return id;
+  }
+
+  public Date getPostDate() {
+    return postDate;
+  }
+
+  public String getTitle() {
+    return title;
+  }
+
+  public String getPostBody() {
+    return postBody;
+  }
+
+  public String getMediaLink() {
+    return mediaLink;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public void setPostBody(String postBody) {
+    this.postBody = postBody;
+  }
+
+  public void setMediaLink(String mediaLink) {
+    this.mediaLink = mediaLink;
+  }
+
+}
