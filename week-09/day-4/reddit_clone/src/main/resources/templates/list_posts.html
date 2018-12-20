@@ -16,7 +16,7 @@
             <span th:text="*{getScore()}" class="font-weight-bold col-1"></span>
             <a th:href="@{|/upvote/*{getId()}|}"><i class="fas fa-plus-square col-1" style="color: green"></i></a>
             <a th:href="@{|/downvote/*{getId()}|}"><i class="fas fa-minus-square col-1" style="color: red"></i></a>
-            <a th:href="@{|/post/*{getId()}/*{getTitle()}|}" th:text="*{getTitle()}" class="col-9"></a>
+            <a th:href="@{|/post/*{getId()}/*{getTitle()}|}" th:text="*{getTitle()}" class="col-8"></a>
         </div>
     </div>
 

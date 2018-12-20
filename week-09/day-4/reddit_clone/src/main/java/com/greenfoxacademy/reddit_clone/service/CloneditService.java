@@ -25,4 +25,16 @@ public class CloneditService {
     return (ArrayList<Post>) cloneditRepository.findAll();
   }
 
+  public void upvotePost(long id) {
+    Post postToUpvote = cloneditRepository.findById(id).get();
+    postToUpvote.increaseScore();
+    cloneditRepository.save(postToUpvote);
+  }
+
+  public void downvotePost(long id) {
+    Post postToDownvote = cloneditRepository.findById(id).get();
+    postToDownvote.decreaseScore();
+    cloneditRepository.save(postToDownvote);
+  }
+
 }

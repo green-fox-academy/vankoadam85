@@ -5,10 +5,7 @@ import com.greenfoxacademy.reddit_clone.service.CloneditService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class CloneditController {
@@ -34,6 +31,18 @@ public class CloneditController {
   @PostMapping("/new_post")
   public String saveNewPost(Post post) {
     cloneditService.savePost(post);
+    return "redirect:/";
+  }
+
+  @GetMapping("/upvote/{id}")
+  public String upvote(@PathVariable("id") long id) {
+    cloneditService.upvotePost(id);
+    return "redirect:/";
+  }
+
+  @GetMapping("downvote/{id}")
+  public String downvote(@PathVariable("id") long id) {
+    cloneditService.downvotePost(id);
     return "redirect:/";
   }
 
