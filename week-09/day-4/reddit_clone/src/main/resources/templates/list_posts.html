@@ -13,6 +13,7 @@
     <br><br>
     <div th:each="post: ${posts}" th:object="${post}" class="list-group">
         <div class="list-group-item">
+            <span th:text="*{getPostDate()}" class="font-weight-bold col-1"></span>
             <span th:text="*{getScore()}" class="font-weight-bold col-1"></span>
             <a th:href="@{|/upvote/*{getId()}|}"><i class="fas fa-plus-square col-1" style="color: green"></i></a>
             <a th:href="@{|/downvote/*{getId()}|}"><i class="fas fa-minus-square col-1" style="color: red"></i></a>
