@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class Post {
+public class Post implements Comparable<Post>{
 
   @Id
   @GeneratedValue
@@ -15,8 +15,8 @@ public class Post {
   private Date postDate;
   private String title;
   @Column(columnDefinition = "TEXT")
-  private String postBody;
-  private String mediaLink;
+  private String body;
+  private String mediaURL;
   private int score;
 
   Post() {
@@ -35,12 +35,12 @@ public class Post {
     return title;
   }
 
-  public String getPostBody() {
-    return postBody;
+  public String getBody() {
+    return body;
   }
 
-  public String getMediaLink() {
-    return mediaLink;
+  public String getMediaURL() {
+    return mediaURL;
   }
 
   public int getScore() {
@@ -51,12 +51,12 @@ public class Post {
     this.title = title;
   }
 
-  public void setPostBody(String postBody) {
-    this.postBody = postBody;
+  public void setBody(String body) {
+    this.body = body;
   }
 
-  public void setMediaLink(String mediaLink) {
-    this.mediaLink = mediaLink;
+  public void setMediaURL(String mediaURL) {
+    this.mediaURL = mediaURL;
   }
 
   public void increaseScore() {
@@ -67,4 +67,8 @@ public class Post {
     this.score--;
   }
 
+  @Override
+  public int compareTo(Post post) {
+    return post.getScore() - this.getScore();
+  }
 }

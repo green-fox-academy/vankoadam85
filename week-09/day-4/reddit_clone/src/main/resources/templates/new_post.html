@@ -12,11 +12,11 @@
         <label th:for="title">Title
             <input th:type="text" th:field="*{title}" class="form-control" required>
         </label><br>
-        <label th:for="postBody">Text
-            <textarea th:type="text" th:field="*{postBody}" class="form-control" required></textarea>
+        <label th:for="body">Text
+            <textarea th:type="text" th:field="*{body}" class="form-control" required></textarea>
         </label><br>
-        <label th:for="mediaLink">URL
-            <input th:type="url" th:field="*{mediaLink}" class="form-control">
+        <label th:for="mediaURL">URL
+            <input th:type="url" th:field="*{mediaURL}" class="form-control">
         </label><br>
         <button th:type="submit" class="btn btn-success">Post</button>
         <button th:type="reset" class="btn btn-primary">Reset</button>

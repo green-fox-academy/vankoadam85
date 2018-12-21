@@ -25,7 +25,7 @@ public class CloneditController {
 
   @GetMapping("/new_post")
   public String createNewPost(@ModelAttribute("newPost") Post post) {
-    return "newPost";
+    return "new_post";
   }
 
   @PostMapping("/new_post")
