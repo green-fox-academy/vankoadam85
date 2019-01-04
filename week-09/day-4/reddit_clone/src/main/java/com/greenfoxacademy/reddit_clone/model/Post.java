@@ -23,6 +23,11 @@ public class Post implements Comparable<Post>{
     this.score = 1;
   }
 
+  public Post(String title, String body) {
+    this.title = title;
+    this.body = body;
+  }
+
   public long getId() {
     return id;
   }

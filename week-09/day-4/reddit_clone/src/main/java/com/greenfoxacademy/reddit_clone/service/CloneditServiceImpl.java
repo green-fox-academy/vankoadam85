@@ -1,8 +1,11 @@
 package com.greenfoxacademy.reddit_clone.service;
 
+import com.greenfoxacademy.reddit_clone.exceptions.NotFoundException;
 import com.greenfoxacademy.reddit_clone.model.Post;
 import com.greenfoxacademy.reddit_clone.repository.CloneditRepository;
+import jdk.net.SocketFlow;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -26,19 +29,19 @@ public class CloneditServiceImpl implements CloneditService {
   }
 
   public void upvotePost(long id) {
-    Post postToUpvote = cloneditRepository.findById(id).get();
+    Post postToUpvote = this.getPost(id);
     postToUpvote.increaseScore();
     cloneditRepository.save(postToUpvote);
   }
 
   public void downvotePost(long id) {
-    Post postToDownvote = cloneditRepository.findById(id).get();
+    Post postToDownvote = this.getPost(id);
     postToDownvote.decreaseScore();
     cloneditRepository.save(postToDownvote);
   }
 
   public Post getPost(long id) {
-    return cloneditRepository.findById(id).get();
+    return cloneditRepository.findById(id).orElseThrow(NotFoundException::new);
   }
 
 }
