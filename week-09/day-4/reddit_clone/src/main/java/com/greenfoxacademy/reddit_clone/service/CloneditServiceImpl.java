@@ -3,9 +3,7 @@ package com.greenfoxacademy.reddit_clone.service;
 import com.greenfoxacademy.reddit_clone.exceptions.NotFoundException;
 import com.greenfoxacademy.reddit_clone.model.Post;
 import com.greenfoxacademy.reddit_clone.repository.CloneditRepository;
-import jdk.net.SocketFlow;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
