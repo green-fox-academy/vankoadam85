@@ -28,13 +28,13 @@ public class CloneditServiceImpl implements CloneditService {
 
   public void upvotePost(long id) {
     Post postToUpvote = this.getPost(id);
-    postToUpvote.increaseScore();
+    postToUpvote.setScore(postToUpvote.getScore() + 1);
     cloneditRepository.save(postToUpvote);
   }
 
   public void downvotePost(long id) {
     Post postToDownvote = this.getPost(id);
-    postToDownvote.decreaseScore();
+    postToDownvote.setScore(postToDownvote.getScore() - 1);
     cloneditRepository.save(postToDownvote);
   }
 

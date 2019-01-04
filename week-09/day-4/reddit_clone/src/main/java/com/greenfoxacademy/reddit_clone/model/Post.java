@@ -59,12 +59,8 @@ public class Post implements Comparable<Post>{
     this.mediaURL = mediaURL;
   }
 
-  public void increaseScore() {
-    this.score++;
-  }
-
-  public void decreaseScore() {
-    this.score--;
+  public void setScore(int score) {
+    this.score = score;
   }
 
   @Override
