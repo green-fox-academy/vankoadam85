@@ -1,6 +1,6 @@
 package com.greenfoxacademy.reddit_clone.service;
 
-import com.greenfoxacademy.reddit_clone.exceptions.NotFoundException;
+import com.greenfoxacademy.reddit_clone.exceptions.PostNotFoundException;
 import com.greenfoxacademy.reddit_clone.model.Post;
 import com.greenfoxacademy.reddit_clone.repository.CloneditRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +39,7 @@ public class CloneditServiceImpl implements CloneditService {
   }
 
   public Post getPost(long id) {
-    return cloneditRepository.findById(id).orElseThrow(NotFoundException::new);
+    return cloneditRepository.findById(id).orElseThrow(PostNotFoundException::new);
   }
 
 }
