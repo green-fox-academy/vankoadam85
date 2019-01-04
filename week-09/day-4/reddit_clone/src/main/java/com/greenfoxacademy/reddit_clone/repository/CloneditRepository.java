@@ -9,6 +9,6 @@ import java.util.ArrayList;
 @Repository
 public interface CloneditRepository extends CrudRepository<Post, Long> {
 
-  public ArrayList<Post> findAllByOrderByScoreDesc();
+  ArrayList<Post> findAllByOrderByScoreDesc();
 
 }
