@@ -9,15 +9,17 @@
 </head>
 <body class="container">
     <h1 class="text-center display-4">Top posts</h1>
-    <a th:href="@{/new_post}" class="btn btn-primary btn-block">Create new post</a>
+    <div class="text-center">
+        <a th:href="@{/new_post}" class="btn btn-primary btn-block">Create new post</a>
+    </div>
     <br><br>
     <div th:each="post: ${posts}" th:object="${post}" class="list-group">
         <div class="list-group-item">
             <span th:text="*{getPostDate()}" class="font-weight-bold col-2"></span>
             <span th:text="*{getScore()}" class="font-weight-bold col-1"></span>
-            <a th:href="@{|/upvote/*{getId()}|}"><i class="fas fa-plus-square icon-2x col-1" style="color: green"></i></a>
-            <a th:href="@{|/downvote/*{getId()}|}"><i class="fas fa-minus-square icon-2x col-1" style="color: red"></i></a>
-            <a th:href="@{|/post/*{getId()}|}" th:text="*{getTitle()}" class="col-7"></a>
+            <a th:href="@{|/*{getId()}/upvote|}"><i class="fas fa-plus-square icon-2x col-1" style="color: green"></i></a>
+            <a th:href="@{|/*{getId()}/downvote|}"><i class="fas fa-minus-square icon-2x col-1" style="color: red"></i></a>
+            <a th:href="@{|/*{getId()}/details|}" th:text="*{getTitle()}" class="col-7"></a>
         </div>
     </div><br>
     <nav aria-label="Page navigation">

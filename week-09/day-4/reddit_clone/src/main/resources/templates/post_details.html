@@ -9,11 +9,17 @@
 <body class="container">
     <div th:object="${post}">
         <h1 th:text="*{getTitle()}" class="text-center display-4"></h1>
-        <a th:href="@{/}" class="btn btn-primary btn-block">Back to the posts</a>
-        <br><br>
+        <div class="d-inline text-center">
+            <a th:ref=""></a>
+            <h3 th:text="*{getScore()}" class="display-4"></h3>
+            <a></a>
+        </div>
         <p th:text="|Posted at: *{getPostDate()}|"></p>
         <p th:text="*{getBody()}"></p>
         <a th:href="@{|*{getMediaURL()}|}" th:text="*{getMediaURL()}" target="_blank"></a>
+        <div class="text-center">
+            <a th:href="@{/}" class="btn btn-primary btn-block">Back to the posts</a>
+        </div>
     </div>
 </body>
 </html>

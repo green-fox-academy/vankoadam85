@@ -39,19 +39,19 @@ public class CloneditController {
     return "redirect:/";
   }
 
-  @GetMapping("/upvote/{id}")
+  @GetMapping("/{id}/upvote")
   public String upvote(@PathVariable("id") long id) {
     cloneditService.upvotePost(id);
     return "redirect:/";
   }
 
-  @GetMapping("downvote/{id}")
+  @GetMapping("/{id}/downvote")
   public String downvote(@PathVariable("id") long id) {
     cloneditService.downvotePost(id);
     return "redirect:/";
   }
 
-  @GetMapping("/post/{id}")
+  @GetMapping("/{id}/details")
   public String getPostDetails(@PathVariable("id") long id, Model model) {
     model.addAttribute("post", cloneditService.getPost(id));
     return "post_details";

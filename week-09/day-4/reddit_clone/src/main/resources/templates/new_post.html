@@ -9,13 +9,13 @@
 <body class="container">
     <h1 class="display-4">Create a new post</h1>
     <form class="form-group" action="#" method="post" th:object="${newPost}">
-        <label th:for="title">Title
+        <label>Title
             <input th:type="text" th:field="*{title}" class="form-control" required>
         </label><br>
-        <label th:for="body">Text
+        <label>Text
             <textarea th:type="text" th:field="*{body}" class="form-control" required></textarea>
         </label><br>
-        <label th:for="mediaURL">URL
+        <label>URL
             <input th:type="url" th:field="*{mediaURL}" class="form-control">
         </label><br>
         <button th:type="submit" class="btn btn-success">Post</button>
