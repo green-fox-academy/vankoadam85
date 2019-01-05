@@ -17,7 +17,7 @@ public class CloneditServiceImpl implements CloneditService {
   @Autowired
   CloneditServiceImpl(CloneditRepository cloneditRepository) {
     this.cloneditRepository = cloneditRepository;
-    this.postPerPage = 2;
+    this.postPerPage = 5;
   }
 
   public void savePost(Post post) {

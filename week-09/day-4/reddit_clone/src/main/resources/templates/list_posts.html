@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <th:block th:replace="fragments.html::head_boilerplate">
+    </th:block>
     <title>All posts</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body class="container">
     <h1 class="text-center display-4">Top posts</h1>
@@ -17,8 +15,8 @@
         <div class="list-group-item">
             <span th:text="*{getPostDate()}" class="font-weight-bold col-2"></span>
             <span th:text="*{getScore()}" class="font-weight-bold col-1"></span>
-            <a th:href="@{|/*{getId()}/upvote|}"><i class="fas fa-plus-square icon-2x col-1" style="color: green"></i></a>
-            <a th:href="@{|/*{getId()}/downvote|}"><i class="fas fa-minus-square icon-2x col-1" style="color: red"></i></a>
+            <a th:href="@{|/*{getId()}/upvote|}"><i class="fas fa-plus-square col-1" style="color: green"></i></a>
+            <a th:href="@{|/*{getId()}/downvote|}"><i class="fas fa-minus-square col-1" style="color: red"></i></a>
             <a th:href="@{|/*{getId()}/details|}" th:text="*{getTitle()}" class="col-7"></a>
         </div>
     </div><br>

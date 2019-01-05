@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <th:block th:replace="fragments.html::head_boilerplate">
+    </th:block>
     <title th:text="${post.getTitle()}"></title>
 </head>
 <body class="container">
     <div th:object="${post}">
         <h1 th:text="*{getTitle()}" class="text-center display-4"></h1>
-        <div class="d-inline text-center">
-            <a th:ref=""></a>
-            <h3 th:text="*{getScore()}" class="display-4"></h3>
-            <a></a>
-        </div>
+        <p th:text="|Score: *{getScore()}|"></p>
         <p th:text="|Posted at: *{getPostDate()}|"></p>
         <p th:text="*{getBody()}"></p>
         <a th:href="@{|*{getMediaURL()}|}" th:text="*{getMediaURL()}" target="_blank"></a>
+        <br><br>
         <div class="text-center">
             <a th:href="@{/}" class="btn btn-primary btn-block">Back to the posts</a>
         </div>
