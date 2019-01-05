@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class GlobalExceptionHandler {
 
   @ResponseStatus(HttpStatus.NOT_FOUND)
-  @ExceptionHandler(PostNotFoundException.class)
-  public String postNotFoundHandler() {
-    return "post_not_found";
+  @ExceptionHandler(ResourceNotFoundException.class)
+  public String resourceNotFoundHandler() {
+    return "resource_not_found";
   }
 
 }

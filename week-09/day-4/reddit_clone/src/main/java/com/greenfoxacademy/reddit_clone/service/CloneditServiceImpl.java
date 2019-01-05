@@ -1,6 +1,6 @@
 package com.greenfoxacademy.reddit_clone.service;
 
-import com.greenfoxacademy.reddit_clone.exceptions.PostNotFoundException;
+import com.greenfoxacademy.reddit_clone.exceptions.ResourceNotFoundException;
 import com.greenfoxacademy.reddit_clone.model.Post;
 import com.greenfoxacademy.reddit_clone.repository.CloneditRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,17 +8,16 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-import java.util.OptionalInt;
-
 @Service
 public class CloneditServiceImpl implements CloneditService {
 
   private CloneditRepository cloneditRepository;
+  private int postPerPage;
 
   @Autowired
   CloneditServiceImpl(CloneditRepository cloneditRepository) {
     this.cloneditRepository = cloneditRepository;
+    this.postPerPage = 2;
   }
 
   public void savePost(Post post) {
@@ -26,7 +25,10 @@ public class CloneditServiceImpl implements CloneditService {
   }
 
   public Page<Post> getAllPosts(int page) {
-    return cloneditRepository.findAllByOrderByScoreDesc(PageRequest.of(page - 1, 2));
+    if (page < 1 || page > this.getNumberOfPages()) {
+      throw new ResourceNotFoundException();
+    }
+    return cloneditRepository.findAllByOrderByScoreDesc(PageRequest.of(page - 1, postPerPage));
   }
 
   public void upvotePost(long id) {
@@ -42,7 +44,11 @@ public class CloneditServiceImpl implements CloneditService {
   }
 
   public Post getPost(long id) {
-    return cloneditRepository.findById(id).orElseThrow(PostNotFoundException::new);
+    return cloneditRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
+  }
+
+  public int getNumberOfPages() {
+    return (int)Math.ceil(cloneditRepository.count() / (double)postPerPage);
   }
 
 }

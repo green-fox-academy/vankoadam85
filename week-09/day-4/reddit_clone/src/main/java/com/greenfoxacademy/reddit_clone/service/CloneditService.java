@@ -15,4 +15,6 @@ public interface CloneditService {
 
   Post getPost(long id);
 
+  int getNumberOfPages();
+
 }
