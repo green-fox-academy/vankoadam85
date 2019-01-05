@@ -2,10 +2,14 @@ package com.greenfoxacademy.reddit_clone.controller;
 
 import com.greenfoxacademy.reddit_clone.model.Post;
 import com.greenfoxacademy.reddit_clone.service.CloneditService;
+import org.omg.CORBA.INTERNAL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
+import java.util.OptionalInt;
 
 @Controller
 public class CloneditController {
@@ -18,8 +22,9 @@ public class CloneditController {
   }
 
   @GetMapping("/")
-  public String listPosts(Model model) {
-    model.addAttribute("posts", cloneditService.getAllPosts());
+  public String listPosts(@RequestParam(value = "pg", required = false) Integer page, Model model) {
+    Optional<Integer> pageNumber = Optional.ofNullable(page);
+    model.addAttribute("posts", cloneditService.getAllPosts(pageNumber.orElse(1)));
     return "list_posts";
   }
 

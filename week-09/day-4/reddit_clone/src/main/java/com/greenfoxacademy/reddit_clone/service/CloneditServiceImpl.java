@@ -4,9 +4,12 @@ import com.greenfoxacademy.reddit_clone.exceptions.PostNotFoundException;
 import com.greenfoxacademy.reddit_clone.model.Post;
 import com.greenfoxacademy.reddit_clone.repository.CloneditRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import java.util.Optional;
+import java.util.OptionalInt;
 
 @Service
 public class CloneditServiceImpl implements CloneditService {
@@ -22,8 +25,8 @@ public class CloneditServiceImpl implements CloneditService {
     cloneditRepository.save(post);
   }
 
-  public ArrayList<Post> getAllPosts() {
-    return cloneditRepository.findAllByOrderByScoreDesc();
+  public Page<Post> getAllPosts(int page) {
+    return cloneditRepository.findAllByOrderByScoreDesc(PageRequest.of(page - 1, 2));
   }
 
   public void upvotePost(long id) {
