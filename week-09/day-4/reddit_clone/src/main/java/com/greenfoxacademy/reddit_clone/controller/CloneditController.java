@@ -58,4 +58,16 @@ public class CloneditController {
     return "post_details";
   }
 
+  @GetMapping("/{id}/details/upvote")
+  public String upvoteAtPostDetails(@PathVariable("id") long id) {
+    cloneditService.upvotePost(id);
+    return "redirect:/" + id + "/details";
+  }
+
+  @GetMapping("/{id}/details/downvote")
+  public String downvoteAtPostDetails(@PathVariable("id") long id) {
+    cloneditService.downvotePost(id);
+    return "redirect:/" + id + "/details";
+  }
+
 }

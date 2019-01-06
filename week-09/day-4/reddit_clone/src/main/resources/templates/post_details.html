@@ -8,7 +8,17 @@
 <body class="container">
     <div th:object="${post}">
         <h1 th:text="*{getTitle()}" class="text-center display-4"></h1>
-        <p th:text="|Score: *{getScore()}|"></p>
+        <ul class="list-inline text-center">
+            <li class="list-inline-item">
+                <a th:href="@{|/*{getId()}/details/upvote|}" class="btn btn-success"><i class="fas fa-arrow-alt-circle-up"></i></a>
+            </li>
+            <li class="list-inline-item">
+                <p th:text="|*{getScore()}|"></p>
+            </li>
+            <li class="list-inline-item">
+                <a th:href="@{|/*{getId()}/details/downvote|}" class="btn btn-danger"><i class="fas fa-arrow-alt-circle-down"></i></a>
+            </li>
+        </ul>
         <p th:text="|Posted at: *{getPostDate()}|"></p>
         <p th:text="*{getBody()}"></p>
         <a th:href="@{|*{getMediaURL()}|}" th:text="*{getMediaURL()}" target="_blank"></a>
