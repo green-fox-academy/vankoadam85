@@ -17,4 +17,6 @@ public interface CloneditService {
 
   int getNumberOfPages();
 
+  int[] getPageNumbers();
+
 }

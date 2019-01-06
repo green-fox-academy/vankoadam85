@@ -51,4 +51,12 @@ public class CloneditServiceImpl implements CloneditService {
     return (int)Math.ceil(cloneditRepository.count() / (double)postPerPage);
   }
 
+  public int[] getPageNumbers() {
+    int[] pageNumbers = new int[this.getNumberOfPages()];
+    for (int i = 0; i < this.getNumberOfPages(); i++) {
+      pageNumbers[i] = i + 1;
+    }
+    return pageNumbers;
+  }
+
 }

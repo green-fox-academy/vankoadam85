@@ -14,9 +14,9 @@
     <div th:each="post: ${posts}" th:object="${post}" class="list-group">
         <div class="list-group-item">
             <span th:text="*{getPostDate()}" class="font-weight-bold col-2"></span>
+            <a th:href="@{|/*{getId()}/upvote|}" class="btn btn-success"><i class="fas fa-arrow-alt-circle-up"></i></a>
             <span th:text="*{getScore()}" class="font-weight-bold col-1"></span>
-            <a th:href="@{|/*{getId()}/upvote|}"><i class="fas fa-plus-square col-1" style="color: green"></i></a>
-            <a th:href="@{|/*{getId()}/downvote|}"><i class="fas fa-minus-square col-1" style="color: red"></i></a>
+            <a th:href="@{|/*{getId()}/downvote|}" class="btn btn-danger"><i class="fas fa-arrow-alt-circle-down"></i></a>
             <a th:href="@{|/*{getId()}/details|}" th:text="*{getTitle()}" class="col-7"></a>
         </div>
     </div><br>
@@ -28,9 +28,11 @@
                     <span class="sr-only">Previous</span>
                 </a>
             </li>
-            <li class="page-item"><a class="page-link" th:href="@{|/?pg=1|}">1</a></li>
-            <li class="page-item"><a class="page-link" th:href="@{|/?pg=2|}">2</a></li>
-            <li class="page-item"><a class="page-link" th:href="@{|/?pg=3|}">3</a></li>
+            <th:block th:each="page_number : ${page_numbers}">
+                <li th:class="page_number == ${current_page} ? |page-item active| : |page-item|">
+                    <a class="page-link" th:href="|/?pg=${page_number}|" th:text="${page_number}"></a>
+                </li>
+            </th:block>
             <li th:class="${current_page} == ${last_page} ? |page-item disabled| : |page-item|">
                 <a class="page-link" th:href="@{|/?pg=${current_page + 1}|}" aria-label="Next">
                     <span aria-hidden="true">»</span>

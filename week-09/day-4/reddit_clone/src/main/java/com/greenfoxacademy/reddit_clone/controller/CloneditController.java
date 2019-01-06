@@ -24,6 +24,7 @@ public class CloneditController {
     Optional<Integer> pageNumber = Optional.ofNullable(page);
     model.addAttribute("posts", cloneditService.getAllPosts(pageNumber.orElse(1)));
     model.addAttribute("current_page", pageNumber.orElse(1));
+    model.addAttribute("page_numbers", cloneditService.getPageNumbers());
     model.addAttribute("last_page", cloneditService.getNumberOfPages());
     return "list_posts";
   }
