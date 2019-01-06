@@ -10,13 +10,21 @@
         <h1 th:text="*{getTitle()}" class="text-center display-4"></h1>
         <ul class="list-inline text-center">
             <li class="list-inline-item">
-                <a th:href="@{|/*{getId()}/details/upvote|}" class="btn btn-success"><i class="fas fa-arrow-alt-circle-up"></i></a>
+                <form th:action="@{|/*{getId()}/details/upvote|}" method="post" class="d-inline">
+                    <button th:type="submit" class="btn btn-success">
+                        <i class="fas fa-arrow-alt-circle-up"></i>
+                    </button>
+                </form>
             </li>
             <li class="list-inline-item">
                 <p th:text="|*{getScore()}|"></p>
             </li>
             <li class="list-inline-item">
-                <a th:href="@{|/*{getId()}/details/downvote|}" class="btn btn-danger"><i class="fas fa-arrow-alt-circle-down"></i></a>
+                <form th:action="@{|/*{getId()}/details/downvote|}" method="post" class="d-inline">
+                    <button th:type="submit" class="btn btn-danger">
+                        <i class="fas fa-arrow-alt-circle-down"></i>
+                    </button>
+                </form>
             </li>
         </ul>
         <p th:text="|Posted at: *{getPostDate()}|"></p>

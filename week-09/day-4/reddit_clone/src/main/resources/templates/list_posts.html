@@ -14,9 +14,19 @@
     <div th:each="post: ${posts}" th:object="${post}" class="list-group">
         <div class="list-group-item">
             <span th:text="*{getPostDate()}" class="font-weight-bold col-2"></span>
-            <a th:href="@{|/*{getId()}/upvote|}" class="btn btn-success"><i class="fas fa-arrow-alt-circle-up"></i></a>
+            <form th:action="@{|/*{getId()}/upvote|}" method="post" class="d-inline">
+                <input type="number" name="currentPage" th:value="${current_page}" hidden>
+                <button th:type="submit" class="btn btn-success">
+                    <i class="fas fa-arrow-alt-circle-up"></i>
+                </button>
+            </form>
             <span th:text="*{getScore()}" class="font-weight-bold col-1"></span>
-            <a th:href="@{|/*{getId()}/downvote|}" class="btn btn-danger"><i class="fas fa-arrow-alt-circle-down"></i></a>
+            <form th:action="@{|/*{getId()}/downvote|}" method="post" class="d-inline">
+                <input type="number" name="currentPage" th:value="${current_page}" hidden>
+                <button th:type="submit" class="btn btn-danger">
+                    <i class="fas fa-arrow-alt-circle-down"></i>
+                </button>
+            </form>
             <a th:href="@{|/*{getId()}/details|}" th:text="*{getTitle()}" class="col-7"></a>
         </div>
     </div><br>
@@ -29,7 +39,7 @@
                 </a>
             </li>
             <th:block th:each="page_number : ${page_numbers}">
-                <li th:class="page_number == ${current_page} ? |page-item active| : |page-item|">
+                <li th:class="${page_number == current_page} ? |page-item active| : |page-item|">
                     <a class="page-link" th:href="|/?pg=${page_number}|" th:text="${page_number}"></a>
                 </li>
             </th:block>

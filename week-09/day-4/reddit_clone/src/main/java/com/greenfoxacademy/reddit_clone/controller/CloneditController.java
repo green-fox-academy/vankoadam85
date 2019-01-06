@@ -40,16 +40,16 @@ public class CloneditController {
     return "redirect:/";
   }
 
-  @GetMapping("/{id}/upvote")
-  public String upvote(@PathVariable("id") long id) {
+  @PostMapping("/{id}/upvote")
+  public String upvote(@PathVariable("id") long id, int currentPage) {
     cloneditService.upvotePost(id);
-    return "redirect:/";
+    return "redirect:/?pg=" + currentPage;
   }
 
-  @GetMapping("/{id}/downvote")
-  public String downvote(@PathVariable("id") long id) {
+  @PostMapping("/{id}/downvote")
+  public String downvote(@PathVariable("id") long id, int currentPage) {
     cloneditService.downvotePost(id);
-    return "redirect:/";
+    return "redirect:/?pg=" + currentPage;
   }
 
   @GetMapping("/{id}/details")
@@ -58,13 +58,13 @@ public class CloneditController {
     return "post_details";
   }
 
-  @GetMapping("/{id}/details/upvote")
+  @PostMapping("/{id}/details/upvote")
   public String upvoteAtPostDetails(@PathVariable("id") long id) {
     cloneditService.upvotePost(id);
     return "redirect:/" + id + "/details";
   }
 
-  @GetMapping("/{id}/details/downvote")
+  @PostMapping("/{id}/details/downvote")
   public String downvoteAtPostDetails(@PathVariable("id") long id) {
     cloneditService.downvotePost(id);
     return "redirect:/" + id + "/details";
