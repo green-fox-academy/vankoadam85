@@ -1,8 +1,10 @@
 package com.greenfoxacademy.rest_practice.controller;
 
-import com.greenfoxacademy.rest_practice.exception.ErrorMessage;
 import com.greenfoxacademy.rest_practice.exception.InputNotFoundException;
+import com.greenfoxacademy.rest_practice.exception.NoNameProvidedException;
+import com.greenfoxacademy.rest_practice.exception.NoTitleProvidedException;
 import com.greenfoxacademy.rest_practice.model.DoubleNumber;
+import com.greenfoxacademy.rest_practice.model.Greeting;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -19,10 +21,13 @@ public class MainRestController {
     return doubleToReturn;
   }
 
-  @ExceptionHandler(InputNotFoundException.class)
-  @ResponseBody
-  public ErrorMessage noInput() {
-    return new ErrorMessage("Please provide an input!");
+  @GetMapping("/greeter")
+  public Greeting greetSomeone(@RequestParam(value = "name", required = false) String name,
+                               @RequestParam(value = "title", required = false) String title) {
+    Optional<String> optionalName = Optional.ofNullable(name);
+    Optional<String> optionalTitle = Optional.ofNullable(title);
+    return new Greeting(optionalName.orElseThrow(NoNameProvidedException::new),
+        optionalTitle.orElseThrow(NoTitleProvidedException::new));
   }
 
 }
