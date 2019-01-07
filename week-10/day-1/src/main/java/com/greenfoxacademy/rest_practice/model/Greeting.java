@@ -19,7 +19,11 @@ public class Greeting {
     this.title = title;
   }
 
+  public void createWelcome_message() {
+    this.welcome_message = "Oh, hi there " + this.name + ", my dear " + this.title + "!";
+  }
+
   public String getWelcome_message() {
-    return "Oh, hi there " + this.name + ", my dear " + this.title + "!";
+    return this.welcome_message;
   }
 }
