@@ -9,25 +9,29 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-  @ExceptionHandler(InputNotFoundException.class)
+  @ExceptionHandler(NoInputProvidedException.class)
+  @ResponseStatus(HttpStatus.BAD_REQUEST)
   @ResponseBody
   public ErrorMessage noInput() {
     return new ErrorMessage("Please provide an input!");
   }
 
   @ExceptionHandler(NoNameProvidedException.class)
+  @ResponseStatus(HttpStatus.BAD_REQUEST)
   @ResponseBody
   public ErrorMessage noName() {
     return new ErrorMessage("Please provide a name!");
   }
 
   @ExceptionHandler(NoTitleProvidedException.class)
+  @ResponseStatus(HttpStatus.BAD_REQUEST)
   @ResponseBody
   public ErrorMessage noTitle() {
     return new ErrorMessage("Please provide a title!");
   }
 
   @ExceptionHandler({NoNumberProvidedException.class})
+  @ResponseStatus(HttpStatus.BAD_REQUEST)
   @ResponseBody
   public ErrorMessage noNumber() {
     return new ErrorMessage("Please provide a number!");
@@ -36,6 +40,7 @@ public class GlobalExceptionHandler {
   @ExceptionHandler(NotFoundException.class)
   @ResponseStatus(HttpStatus.NOT_FOUND)
   public void notFound() {
+
   }
 
 }

@@ -1,14 +1,9 @@
 package com.greenfoxacademy.rest_practice.dto;
 
-public class DoUntil {
+public class DoUntilResponseDto {
 
-  private Integer until;
+  private int until;
   private int result;
-
-  public DoUntil(int until, int result) {
-    this.until = until;
-    this.result = result;
-  }
 
   public int getUntil() {
     return until;

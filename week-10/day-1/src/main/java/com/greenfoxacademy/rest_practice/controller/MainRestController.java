@@ -1,14 +1,15 @@
 package com.greenfoxacademy.rest_practice.controller;
 
-import com.greenfoxacademy.rest_practice.dto.Until;
+import com.greenfoxacademy.rest_practice.dto.*;
 import com.greenfoxacademy.rest_practice.exception.*;
-import com.greenfoxacademy.rest_practice.model.AAppender;
-import com.greenfoxacademy.rest_practice.dto.DoUntil;
-import com.greenfoxacademy.rest_practice.model.DoubleNumber;
-import com.greenfoxacademy.rest_practice.model.Greeting;
 import com.greenfoxacademy.rest_practice.service.RestPracticeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 
@@ -23,44 +24,47 @@ public class MainRestController {
   }
 
   @GetMapping("/doubling")
-  public DoubleNumber doubleInput(@RequestParam(value = "input", required = false) Integer input) {
-    Optional<Integer> inputToDouble = Optional.ofNullable(input);
-    DoubleNumber doubleToReturn = new DoubleNumber();
-    doubleToReturn.setReceived(inputToDouble.orElseThrow(InputNotFoundException::new));
-    doubleToReturn.setResult();
-    return doubleToReturn;
+  public DoublingResponseDto doubling(@RequestParam(value = "input", required = false) Integer input) {
+    Optional<Integer> optionalInput = Optional.ofNullable(input);
+    DoublingResponseDto doublingResponseDto = new DoublingResponseDto();
+    doublingResponseDto.setReceived(optionalInput.orElseThrow(NoInputProvidedException::new));
+    doublingResponseDto.setResult(restPracticeService.doubleNumber(optionalInput.orElseThrow(NoInputProvidedException::new)));
+    return doublingResponseDto;
   }
 
   @GetMapping("/greeter")
-  public Greeting greetSomeone(@RequestParam(value = "name", required = false) String name,
-                               @RequestParam(value = "title", required = false) String title) {
+  public GreeterResponseDto greeter(@RequestParam(value = "name", required = false) String name,
+                                    @RequestParam(value = "title", required = false) String title) {
     Optional<String> optionalName = Optional.ofNullable(name);
     Optional<String> optionalTitle = Optional.ofNullable(title);
-    Greeting greeting = new Greeting(optionalName.orElseThrow(NoNameProvidedException::new),
-        optionalTitle.orElseThrow(NoTitleProvidedException::new));
-    greeting.createWelcome_message();
-    return greeting;
+    GreeterResponseDto greeterResponseDto = new GreeterResponseDto();
+    greeterResponseDto.setWelcome_message(restPracticeService.greet(
+        optionalName.orElseThrow(NoNameProvidedException::new), optionalTitle.orElseThrow(NoTitleProvidedException::new)));
+    return greeterResponseDto;
   }
 
-  @GetMapping("/append/{appendable}")
-  public AAppender appendA(@PathVariable("appendable") String appendable) {
-    AAppender aAppender = new AAppender(appendable);
-    aAppender.createAppended();
-    return aAppender;
+  @GetMapping("/appenda/{appendable}")
+  public AppendAResponseDto appendA(@PathVariable("appendable") String appendable) {
+    Optional<String> optionalAppendable = Optional.ofNullable(appendable);
+    AppendAResponseDto appendAResponseDto = new AppendAResponseDto();
+    appendAResponseDto.setAppended(restPracticeService.appendA(optionalAppendable.orElseThrow(NotFoundException::new)));
+    return appendAResponseDto;
   }
 
   @PostMapping("/dountil/{action}")
-  public DoUntil doUntil(@PathVariable("action") String action, @RequestBody(required = false) Until input) {
-    Optional<Until> optionalInput = Optional.ofNullable(input);
+  public DoUntilResponseDto doUntil(@PathVariable("action") String action,
+                                    @RequestBody(required = false) DoUntilRequestDto input) {
+    Optional<Integer> optionalInput = Optional.ofNullable(input.getUntil());
+    DoUntilResponseDto doUntilResponseDto = new DoUntilResponseDto();
+    doUntilResponseDto.setUntil(optionalInput.orElseThrow(NoNumberProvidedException::new));
     if (action.equals("sum")) {
-      return new DoUntil(optionalInput.orElseThrow(NoNumberProvidedException::new).getUntil(),
-          restPracticeService.sumUntil(optionalInput.orElseThrow(NoNumberProvidedException::new).getUntil()));
-    } else if (action.equals("factor")) {
-      return new DoUntil(optionalInput.orElseThrow(NoNumberProvidedException::new).getUntil(),
-          restPracticeService.factorial(optionalInput.orElseThrow(NoNumberProvidedException::new).getUntil()));
+      doUntilResponseDto.setResult(restPracticeService.sum(optionalInput.orElseThrow(NoNumberProvidedException::new)));
+    } else if(action.equals("factor")) {
+      doUntilResponseDto.setResult(restPracticeService.factor(optionalInput.orElseThrow(NoNameProvidedException::new)));
     } else {
       throw new NotFoundException();
     }
+    return doUntilResponseDto;
   }
 
 }

@@ -1,6 +1,6 @@
-package com.greenfoxacademy.rest_practice.model;
+package com.greenfoxacademy.rest_practice.dto;
 
-public class DoubleNumber {
+public class DoublingResponseDto {
 
   private int received;
   private int result;
@@ -17,7 +17,7 @@ public class DoubleNumber {
     return result;
   }
 
-  public void setResult() {
-    this.result = this.received * 2;
+  public void setResult(int result) {
+    this.result = result;
   }
 }

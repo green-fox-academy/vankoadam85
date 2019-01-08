@@ -1,6 +1,6 @@
 package com.greenfoxacademy.rest_practice.dto;
 
-public class Until {
+public class DoUntilRequestDto {
 
   private Integer until;
 

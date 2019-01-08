@@ -1,24 +1,15 @@
 package com.greenfoxacademy.rest_practice.service;
 
-import org.springframework.stereotype.Service;
+public interface RestPracticeService {
 
-@Service
-public class RestPracticeService {
+  int doubleNumber(int input);
 
-  public int sumUntil(int input) {
-    int result = 0;
-    for (int i = 1; i <= input; i++) {
-      result += i;
-    }
-    return result;
-  }
+  int sum(int input);
 
-  public int factorial(int input) {
-    if (input == 1) {
-      return 1;
-    } else {
-      return input * factorial(input - 1);
-    }
-  }
+  int factor(int input);
+
+  String greet(String name, String title);
+
+  String appendA(String appendable);
 
 }
