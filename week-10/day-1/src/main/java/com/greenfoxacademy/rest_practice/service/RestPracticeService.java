@@ -12,4 +12,10 @@ public interface RestPracticeService {
 
   String appendA(String appendable);
 
+  int sumArray(int... input);
+
+  public int multiplyArray(int... input);
+
+  public int[] doubleArray(int... input);
+
 }

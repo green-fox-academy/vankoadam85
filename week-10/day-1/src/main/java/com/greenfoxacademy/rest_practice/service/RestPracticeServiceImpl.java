@@ -33,4 +33,28 @@ public class RestPracticeServiceImpl implements RestPracticeService {
     }
   }
 
+  public int sumArray(int... input) {
+    int result = 0;
+    for (int number : input) {
+      result += number;
+    }
+    return result;
+  }
+
+  public int multiplyArray(int... input) {
+    int result = 1;
+    for (int number : input) {
+      result *= number;
+    }
+    return result;
+  }
+
+  public int[] doubleArray(int... input) {
+    int[] result = new int[input.length];
+    for (int i = 0; i < input.length; i++) {
+      result[i] = input[i] * 2;
+    }
+    return result;
+  }
+
 }

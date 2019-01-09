@@ -67,4 +67,24 @@ public class MainRestController {
     return doUntilResponseDto;
   }
 
+  @PostMapping("/arrays")
+  public ArrayHandlerResponseDto arrayHandler(@RequestBody(required = false) ArrayHandlerRequestDto input) {
+    Optional<ArrayHandlerRequestDto> optionalInput = Optional.ofNullable(input);
+    Optional<String> optionalInputWhat = Optional.ofNullable(optionalInput.orElseThrow(NoWhatProvidedException::new).getWhat());
+    Optional<int[]> optionalInputNumbers = Optional.ofNullable(optionalInput.orElseThrow(NoWhatProvidedException::new).getNumbers());
+    switch (optionalInputWhat.orElseThrow(NoWhatProvidedException::new)) {
+      case "sum":
+        return new ArrayHandlerResponseIntDto(restPracticeService.sumArray(
+            optionalInputNumbers.orElseThrow(NoNumberProvidedException::new)));
+      case "multiply":
+        return new ArrayHandlerResponseIntDto(restPracticeService.multiplyArray(
+            optionalInputNumbers.orElseThrow(NoNumberProvidedException::new)));
+      case "double":
+        return new ArrayHandlerResponseArrayDto(restPracticeService.doubleArray(
+            optionalInputNumbers.orElseThrow(NoNumberProvidedException::new)));
+      default:
+         throw new NotFoundException();
+    }
+  }
+
 }

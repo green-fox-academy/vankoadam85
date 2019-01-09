@@ -40,7 +40,13 @@ public class GlobalExceptionHandler {
   @ExceptionHandler(NotFoundException.class)
   @ResponseStatus(HttpStatus.NOT_FOUND)
   public void notFound() {
+  }
 
+  @ExceptionHandler(NoWhatProvidedException.class)
+  @ResponseStatus(HttpStatus.BAD_REQUEST)
+  @ResponseBody
+  public ErrorMessage noWhat() {
+    return new ErrorMessage("Please provide what to do with the numbers!");
   }
 
 }
