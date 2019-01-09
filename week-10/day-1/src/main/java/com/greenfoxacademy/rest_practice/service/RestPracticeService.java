@@ -1,5 +1,11 @@
 package com.greenfoxacademy.rest_practice.service;
 
+import com.greenfoxacademy.rest_practice.dto.LogDto;
+import com.greenfoxacademy.rest_practice.dto.LogReportDto;
+import com.greenfoxacademy.rest_practice.model.Log;
+
+import java.util.ArrayList;
+
 public interface RestPracticeService {
 
   int doubleNumber(int input);
@@ -14,8 +20,18 @@ public interface RestPracticeService {
 
   int sumArray(int... input);
 
-  public int multiplyArray(int... input);
+  int multiplyArray(int... input);
 
-  public int[] doubleArray(int... input);
+  int[] doubleArray(int... input);
+
+  void saveLog(String endpoint, String data);
+
+  Iterable<Log> getAllLogs();
+
+  long getCountOfLogEntries();
+
+  LogReportDto getLogReport();
+
+  LogDto convertLogToLogDto(Log log);
 
 }

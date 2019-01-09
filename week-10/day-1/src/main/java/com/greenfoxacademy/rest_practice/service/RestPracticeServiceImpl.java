@@ -1,9 +1,21 @@
 package com.greenfoxacademy.rest_practice.service;
 
+import com.greenfoxacademy.rest_practice.dto.LogDto;
+import com.greenfoxacademy.rest_practice.dto.LogReportDto;
+import com.greenfoxacademy.rest_practice.model.Log;
+import com.greenfoxacademy.rest_practice.repository.LogRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class RestPracticeServiceImpl implements RestPracticeService {
+
+  private LogRepository logRepository;
+
+  @Autowired
+  RestPracticeServiceImpl(LogRepository logRepository) {
+    this.logRepository = logRepository;
+  }
 
   public int doubleNumber(int input) {
     return input * 2;
@@ -55,6 +67,31 @@ public class RestPracticeServiceImpl implements RestPracticeService {
       result[i] = input[i] * 2;
     }
     return result;
+  }
+
+  public void saveLog(String endpoint, String data) {
+      logRepository.save(new Log(endpoint, data));
+  }
+
+  public Iterable<Log> getAllLogs() {
+    return logRepository.findAll();
+  }
+
+  public LogReportDto getLogReport() {
+    LogReportDto logReportDto = new LogReportDto();
+    for (Log log : this.getAllLogs()) {
+      logReportDto.addEntry(this.convertLogToLogDto(log));
+    }
+    logReportDto.setEntry_count(this.getCountOfLogEntries());
+    return logReportDto;
+  }
+
+  public LogDto convertLogToLogDto(Log log) {
+    return new LogDto(log.getId(), log.getEndpoint(), log.getData());
+  }
+
+  public long getCountOfLogEntries() {
+    return logRepository.count();
   }
 
 }
