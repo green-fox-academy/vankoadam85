@@ -63,7 +63,8 @@ public class CloneditServiceImpl implements CloneditService {
     return pageNumbers;
   }
 
-  public void saveComment(Comment comment) {
+  public void saveComment(Comment comment, long id) {
+    comment.setPost(postRepository.findById(id).orElseThrow(ResourceNotFoundException::new));
     commentRepository.save(comment);
   }
 

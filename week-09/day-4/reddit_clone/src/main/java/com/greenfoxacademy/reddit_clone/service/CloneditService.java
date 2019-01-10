@@ -20,6 +20,6 @@ public interface CloneditService {
 
   int[] getPageNumbers();
 
-  void saveComment(Comment comment);
+  void saveComment(Comment comment, long id);
 
 }

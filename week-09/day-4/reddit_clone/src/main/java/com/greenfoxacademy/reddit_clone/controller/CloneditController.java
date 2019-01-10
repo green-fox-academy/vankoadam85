@@ -62,8 +62,9 @@ public class CloneditController {
   }
 
   @PostMapping("/{id}/details")
-  public void saveComment(@PathVariable long id, Comment comment) {
-    cloneditService.saveComment(comment);
+  public String saveComment(@PathVariable long id, Comment comment) {
+    cloneditService.saveComment(comment, id);
+    return "redirect:/" + id + "/details";
   }
 
   @PostMapping("/{id}/details/upvote")
