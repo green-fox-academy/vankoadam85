@@ -41,5 +41,11 @@
             <button th:type="submit" class="btn btn-success">Comment</button>
         </div>
     </form>
+    <div th:each="comment : ${comments}" th:object="${comment}" class="list-group">
+        <div class="list-group-item">
+            <span th:text="*{getPostDate()}" class="font-weight-bold col-2"></span>
+            <p th:text="*{getBody()}" class="d-inline"></p>
+        </div>
+    </div>
 </body>
 </html>

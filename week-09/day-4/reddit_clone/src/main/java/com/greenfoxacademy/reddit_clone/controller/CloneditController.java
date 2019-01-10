@@ -58,6 +58,7 @@ public class CloneditController {
   public String getPostDetails(@PathVariable("id") long id, Model model) {
     model.addAttribute("post", cloneditService.getPost(id));
     model.addAttribute("newComment", new Comment());
+    model.addAttribute("comments", cloneditService.getAllCommentsOfPost(id));
     return "post_details";
   }
 

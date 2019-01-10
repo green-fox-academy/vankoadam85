@@ -22,4 +22,6 @@ public interface CloneditService {
 
   void saveComment(Comment comment, long id);
 
+  public Iterable<Comment> getAllCommentsOfPost(long id);
+
 }
