@@ -22,6 +22,13 @@ public class Comment {
   @OnDelete(action = OnDeleteAction.CASCADE)
   private Post post;
 
+  public Comment() {
+  }
+
+  public Comment(String body) {
+    this.body = body;
+  }
+
   public long getId() {
     return id;
   }
@@ -30,7 +37,7 @@ public class Comment {
     return postDate;
   }
 
-    public String getBody() {
+  public String getBody() {
     return body;
   }
 

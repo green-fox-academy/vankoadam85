@@ -1,6 +1,7 @@
 package com.greenfoxacademy.reddit_clone.service;
 
 import com.greenfoxacademy.reddit_clone.exceptions.ResourceNotFoundException;
+import com.greenfoxacademy.reddit_clone.model.Comment;
 import com.greenfoxacademy.reddit_clone.model.Post;
 import com.greenfoxacademy.reddit_clone.repository.CommentRepository;
 import com.greenfoxacademy.reddit_clone.repository.PostRepository;
@@ -60,6 +61,10 @@ public class CloneditServiceImpl implements CloneditService {
       pageNumbers[i] = i + 1;
     }
     return pageNumbers;
+  }
+
+  public void saveComment(Comment comment) {
+    commentRepository.save(comment);
   }
 
 }

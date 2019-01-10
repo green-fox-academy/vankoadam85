@@ -1,5 +1,6 @@
 package com.greenfoxacademy.reddit_clone.service;
 
+import com.greenfoxacademy.reddit_clone.model.Comment;
 import com.greenfoxacademy.reddit_clone.model.Post;
 import org.springframework.data.domain.Page;
 
@@ -18,5 +19,7 @@ public interface CloneditService {
   int getNumberOfPages();
 
   int[] getPageNumbers();
+
+  void saveComment(Comment comment);
 
 }

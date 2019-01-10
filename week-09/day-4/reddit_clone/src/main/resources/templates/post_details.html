@@ -31,9 +31,15 @@
         <p th:text="*{getBody()}"></p>
         <a th:href="@{|*{getMediaURL()}|}" th:text="*{getMediaURL()}" target="_blank"></a>
         <br><br>
-        <div class="text-center">
-            <a th:href="@{/}" class="btn btn-primary btn-block">Back to the posts</a>
-        </div>
     </div>
+    <div class="text-center">
+        <a th:href="@{/}" class="btn btn-primary btn-block">Back to the posts</a>
+    </div>
+    <form action="#" th:method="post" th:object="${newComment}" class="input-group">
+        <input type="text" th:field="*{body}" class="form-control" aria-label="post-a-comment" required>
+        <div class="input-group-append">
+            <button th:type="submit" class="btn btn-success">Comment</button>
+        </div>
+    </form>
 </body>
 </html>

@@ -1,5 +1,6 @@
 package com.greenfoxacademy.reddit_clone.controller;
 
+import com.greenfoxacademy.reddit_clone.model.Comment;
 import com.greenfoxacademy.reddit_clone.model.Post;
 import com.greenfoxacademy.reddit_clone.service.CloneditService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class CloneditController {
     this.cloneditService = cloneditService;
   }
 
-  @GetMapping("/")
+  @GetMapping({"/", ""})
   public String listPosts(@RequestParam(value = "pg", required = false) Integer page, Model model) {
     Optional<Integer> pageNumber = Optional.ofNullable(page);
     model.addAttribute("posts", cloneditService.getAllPosts(pageNumber.orElse(1)));
@@ -30,7 +31,8 @@ public class CloneditController {
   }
 
   @GetMapping("/new_post")
-  public String createNewPost(@ModelAttribute("newPost") Post post) {
+  public String createNewPost(Model model) {
+    model.addAttribute("newPost", new Post());
     return "new_post";
   }
 
@@ -55,7 +57,13 @@ public class CloneditController {
   @GetMapping("/{id}/details")
   public String getPostDetails(@PathVariable("id") long id, Model model) {
     model.addAttribute("post", cloneditService.getPost(id));
+    model.addAttribute("newComment", new Comment());
     return "post_details";
+  }
+
+  @PostMapping("/{id}/details")
+  public void saveComment(@PathVariable long id, Comment comment) {
+    cloneditService.saveComment(comment);
   }
 
   @PostMapping("/{id}/details/upvote")

@@ -19,7 +19,7 @@ public class Post implements Comparable<Post>{
   private String mediaURL;
   private int score;
 
-  Post() {
+  public Post() {
     this.score = 1;
   }
 
