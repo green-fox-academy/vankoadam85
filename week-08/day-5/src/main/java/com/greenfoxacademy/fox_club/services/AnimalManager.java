@@ -13,6 +13,7 @@ public class AnimalManager {
 
   AnimalManager() {
     animals = new ArrayList<>();
+    animals.add(new Fox("George"));
   }
 
   public ArrayList<Animal> getAnimals() {

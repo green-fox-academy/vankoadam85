@@ -69,7 +69,7 @@ public class CloneditServiceImpl implements CloneditService {
   }
 
   public Iterable<Comment> getAllCommentsOfPost(long id) {
-    return commentRepository.findAllByPost_IdOrderByPostDate(id);
+    return commentRepository.findAllByPost_IdOrderByCreatedTime(id);
   }
 
 }

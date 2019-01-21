@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CommentRepository extends CrudRepository<Comment, Long> {
 
-  Iterable<Comment> findAllByPost_IdOrderByPostDate(long id);
+  Iterable<Comment> findAllByPost_IdOrderByCreatedTime(long id);
 
 }

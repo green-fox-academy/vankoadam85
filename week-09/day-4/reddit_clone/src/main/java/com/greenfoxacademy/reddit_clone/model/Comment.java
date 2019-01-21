@@ -14,7 +14,7 @@ public class Comment {
   @GeneratedValue
   private long id;
   @CreationTimestamp
-  private Date postDate;
+  private Date createdTime;
   private String body;
 
   @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -33,8 +33,8 @@ public class Comment {
     return id;
   }
 
-  public Date getPostDate() {
-    return postDate;
+  public Date getCreatedTime() {
+    return createdTime;
   }
 
   public String getBody() {

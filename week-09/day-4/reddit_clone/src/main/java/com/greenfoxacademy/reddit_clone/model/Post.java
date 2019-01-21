@@ -12,7 +12,7 @@ public class Post implements Comparable<Post>{
   @GeneratedValue
   private long id;
   @CreationTimestamp
-  private Date postDate;
+  private Date createdTime;
   private String title;
   @Column(columnDefinition = "TEXT")
   private String body;
@@ -27,8 +27,8 @@ public class Post implements Comparable<Post>{
     return id;
   }
 
-  public Date getPostDate() {
-    return postDate;
+  public Date getCreatedTime() {
+    return createdTime;
   }
 
   public String getTitle() {

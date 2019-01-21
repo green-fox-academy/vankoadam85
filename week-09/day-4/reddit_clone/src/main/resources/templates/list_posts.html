@@ -13,7 +13,7 @@
     <br><br>
     <div th:each="post: ${posts}" th:object="${post}" class="list-group">
         <div class="list-group-item">
-            <span th:text="*{getPostDate()}" class="font-weight-bold col-2"></span>
+            <span th:text="*{getCreatedTime()}" class="font-weight-bold col-2"></span>
             <form th:action="@{|/*{getId()}/upvote|}" method="post" class="d-inline">
                 <input type="number" name="currentPage" th:value="${current_page}" hidden>
                 <button th:type="submit" class="btn btn-success">

@@ -27,7 +27,7 @@
                 </form>
             </li>
         </ul>
-        <p th:text="|Posted at: *{getPostDate()}|"></p>
+        <p th:text="|Posted at: *{getCreatedTime()}|"></p>
         <p th:text="*{getBody()}"></p>
         <a th:href="@{|*{getMediaURL()}|}" th:text="*{getMediaURL()}" target="_blank"></a>
         <br><br>
@@ -43,7 +43,7 @@
     </form>
     <div th:each="comment : ${comments}" th:object="${comment}" class="list-group">
         <div class="list-group-item">
-            <span th:text="*{getPostDate()}" class="font-weight-bold col-2"></span>
+            <span th:text="*{getCreatedTime()}" class="font-weight-bold col-2"></span>
             <p th:text="*{getBody()}" class="d-inline"></p>
         </div>
     </div>

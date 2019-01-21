@@ -2,7 +2,7 @@ package com.greenfoxacademy.fox_club.models;
 
 import java.util.ArrayList;
 
-public abstract class Animal {
+public class Animal {
 
   private String name;
   private ArrayList<String> tricks;
